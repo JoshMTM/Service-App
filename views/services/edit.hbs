@@ -1,0 +1,26 @@
+<h2>Edit a service</h2>
+{{#if service}}
+	<form method='post' action='/services'>
+		<div class='form-group'>
+			<label for='name'>Name:</label>
+			<input name='name' type='text' class='form-control' id='name' />
+		</div>
+		<div class='form-group'>
+			<label for='description'>Description:</label>
+			<input name='description' type='text' class='form-control' id='description' />
+		</div>
+		<div class='form-group'>
+			<label for='address'>Address:</label>
+			<input name='address' type='text' class='form-control' id='address' />
+		</div>
+		<div class='form-group'>
+			<label for='price'>Price/Hour:</label>
+			<input name='price' type='text' class='form-control' id='price' />
+		</div>
+		<div class='form-group'>
+			<label for='photo'>Descriptive Photo:</label>
+			<input type='url' id='photo' name='photo' />
+		</div>
+		<button type='submit' class='btn btn-primary'>Save</button>
+	</form>
+{{/if}}

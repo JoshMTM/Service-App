@@ -1,0 +1,74 @@
+<div class="both-centered">
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form method="POST" action="/signup">
+                <div class="form form-sign-up">
+                    <h6>SIGN UP</h6>
+                    <div class="sign-up local">
+                        <input name="username" type="text" placeholder="Enter your username" autofocus required>
+                        <input name="email" type="email" placeholder="Enter your email" required>
+                        <select id="country" name="country" required>
+                            <option value="" disabled selected>Select your country</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Belgium">Belgium</option>
+							<option value="Bulgaria">Bulgaria</option>
+							<option value="Croatia">Croatia</option>
+							<option value="Cyprus">Cyprus</option>
+							<option value="Czechia">Czechia</option>
+							<option value="Denmark">Denmark/option>
+							<option value="Estonia">Estonia</option>
+							<option value="Finland">Finland</option>
+						    <option value="France">France</option>
+							<option value="Germany">Germany</option>
+							<option value="Hungary">Hungary</option>
+							<option value="Ireland">Ireland</option>
+							<option value="Italy">Italy</option>
+							<option value="Latvia">Latvia</option>
+							<option value="Lithuania">Lithuania</option>
+							<option value="Luxembourg">Luxembourg</option>
+                            <option value="Malta">Malta</option>
+							<option value="Netherlands">Netherlands</option>
+							<option value="Poland">Poland</option>
+							<option value="Portugal">Portugal</option>
+                            <option value="Romania">Romania</option>
+							<option value="Slovakia">Slovakia</option>
+							<option value="Slovenia">Slovenia</option>
+							<option value="Spain">Spain</option>
+							<option value="Sweden">Sweden</option>
+                        </select>
+                        <input name="password" type="password" placeholder="Enter your password" required>
+                        <input name="confirmPassword" type="password" placeholder="Confirm your password" required>
+                        <button type="submit">SIGN UP</button>
+                    </div>
+                    {{> google }}
+                </div>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="/signin" method="POST">
+                <h6>SIGN IN</h6>
+                <div class="form form-sign-in">
+                    <div class="sign-in local">
+                        <input name="username" type="text" placeholder="Enter your username" required autofocus>
+                        <input name="password" type="password" placeholder="Enter your password" required>
+                        <button type="submit">SIGN IN</button>
+                    </div>
+                    {{> google }}
+
+                </div>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <p>Have an account?</p>
+                    <button id="signIn" class="ghost" type="submit">SIGN IN</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <p>Don't have an account?</p>
+                    <button id="signUp" class="ghost" type="submit">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

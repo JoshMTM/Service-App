@@ -1,0 +1,17 @@
+<h1>Provided services</h1>
+<table>
+	<thead>
+		<th>Photo Gallery</th>
+		<th>Description</th>
+		<th>Details</th>
+	</thead>
+	<tbody>
+	    {{#each services}}
+	    <td>
+		    <tr><img src= {{this.url}} alt= 'The image could not be uploaded'></tr>
+		    <tr>{{this.name}} <br> {{this.description}}</tr>
+		    <tr><button>Details</button></tr>
+	    </td
+	    {{/each}}>
+	</tbody>
+</table>
