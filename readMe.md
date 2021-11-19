@@ -48,4 +48,4 @@ A User will be able to browse back to the main/home page or to the list of other
 
 #### Add a new service:
 
-A logged in will be able to see a form to fill with all the necessary information such as name of the service, a description, price/hour,
+A logged in will be able to see a form to fill with all the necessary information such as name of the service, a description, price/hour and a descriptive photo.
