@@ -1,6 +1,6 @@
-HANDEE
+# HANDEE
 
-# Description
+## Description
 
 This app is a simple that will help people find neccessary service providers at the cost they are willing to spend. Do you have skills that you do not use? This is your space.
 
@@ -11,7 +11,7 @@ Once registered, user (customer) will be redirected to the Homepage, and service
 As a registered customer, the user is redirected to his own page, which shows all his orders, divided into: pending approval or declined, in progress, completed.
 //At Homepage user can see most popular services of the website with the links to the Details Page (with all the services, provided on the website), general links to the information about the company, the logout button.
 
-# Home Page:
+## Home Page:
 
 A User will be able to hace access to the Login, Log out page from the Home page.
 
@@ -25,13 +25,13 @@ A user should be able to read more about the
 
 A user will be able to access our social media platforms through the links available on the footer of the page.
 
-# SignUp Page:
+## SignUp Page:
 
 A User would be able to see a form to fill with all the necessary information such as names, email and password.
 
 A User will be able to submit a fully completed form and be then redirected to his/her profile page.
 
-# SignIn:
+## SignIn:
 
 A User will be able to see a form to fill with all the necessary information such as user name or names and password.
 
