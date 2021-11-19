@@ -11,7 +11,9 @@ Once registered, user (customer) will be redirected to the Homepage, and service
 As a registered customer, the user is redirected to his own page, which shows all his orders, divided into: pending approval or declined, in progress, completed.
 //At Homepage user can see most popular services of the website with the links to the Details Page (with all the services, provided on the website), general links to the information about the company, the logout button.
 
-## Home Page:
+## User Story:
+
+#### Home Page:
 
 A User will be able to hace access to the Login, Log out page from the Home page.
 
@@ -21,18 +23,29 @@ The user will be able to see a sample of recent services available on the site.
 
 A user will be able to click on a details button on any service and read more about the service and if needed, make a request.
 
-A user should be able to read more about the
+A user should be able to read more about the us as the platform creator and our other works and offers; the terms and conditions and ways of contacting us.
 
 A user will be able to access our social media platforms through the links available on the footer of the page.
 
-## SignUp Page:
+#### SignUp Page:
 
 A User would be able to see a form to fill with all the necessary information such as names, email and password.
 
 A User will be able to submit a fully completed form and be then redirected to his/her profile page.
 
-## SignIn:
+#### SignIn:
 
 A User will be able to see a form to fill with all the necessary information such as user name or names and password.
 
 By clicking on submit button, a User will be able to submit a fully completed form and be then redirected to his/her profile page.
+
+#### Details Page:
+
+A user will be able to view all details about an available service.
+A User will be able to contact the provider of service for more information
+A User will be able to book or request for the service
+A User will be able to browse back to the main/home page or to the list of other/all services
+
+#### Add a new service:
+
+A logged in will be able to see a form to fill with all the necessary information such as name of the service, a description, price/hour,
