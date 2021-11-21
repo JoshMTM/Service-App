@@ -5,13 +5,9 @@ const RequestSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	pending_approval: {
-		type: Boolean,
-		default: false,
-	},
-	status: ['pending approval', 'taken into work', 'declined', 'completed'],
+	status: ['pending', 'inProgress', 'declined', 'completed'],
 
-	service_Id: {
+	serviceId: {
 		type: Schema.Types.ObjectId,
 		ref: 'Service',
 	},
