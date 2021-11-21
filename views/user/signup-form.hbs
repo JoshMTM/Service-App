@@ -1,9 +1,12 @@
-<form action="/signup" method="POST">
+<form action="/signup/profile" method="POST">
   <label>First name</label>
   <input name="firstName" type="text" placeholder="Enter your First name" />
 
   <label>Last name</label>
   <input name="lastName" type="text" placeholder="Enter your Last name" />
+
+  <label>Expertise</label>
+  <input name="expertise" type="text" placeholder="What do for a living" />
 
   <label>Email</label>
   <input name="email" type="email" placeholder="Enter your Email address" />
@@ -11,6 +14,16 @@
   <label>Password</label>
   <input name="password" type="password" placeholder="Enter your Password" />
 
+  <label>Your Profile picture</label>
+  <input name="img_url" type="url" placeholder="Upload an image" />
+
+  <label>Description</label>
+
+  <textarea rows="5" cols="60" name="description">
+    "Tell us briefly about who you are and what you do"
+  </textarea>
+  <br />
+  <br />
   <button>Sign Up</button>
 
 </form>

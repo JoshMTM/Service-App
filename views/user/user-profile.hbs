@@ -1,1 +1,20 @@
-<h2>Welcome to my profile</h2>
+<div class="userProfile">
+  {{#each user}}
+    <p>Welcome to your space <b>{{this.firstName}}</b></p>
+    <h3>Get the best quality home services near you</h3>
+    <h3>You can update your own profile to attract more clients.</h3>
+    <h2>{{this.expertise}}</h2>
+    <h4>{{this.description}}</h4>
+
+    <img class="profile-Img" src="{{this.img_url}}" alt="profile picture" />
+    <div class="profile-btn">
+      <form action="/{{this._id}}/edit" method="GET">
+        <button type="submit" class="btn btn-warning">Edit Profile</button>
+      </form>
+
+      <form action="/{{this._id}}/newService" method="GET">
+        <button type="submit" class="btn btn-warning">Add a new service</button>
+      </form>
+    </div>
+  {{/each}}
+</div>

@@ -1,0 +1,34 @@
+<form method="POST" action="/{{user._id}}/profile">
+  <div class="mb-3">
+    <label>First name</label>
+    <input name="firstName" type="text" value="{{user.firstName}}" />
+
+    <label>Last name</label>
+    <input name="lastName" type="text" value="{{user.lastName}}" />
+
+    <label>Expertise</label>
+    <input name="expertise" type="text" value="{{user.expertise}}" />
+
+    <label>Email</label>
+    <input name="email" type="email" value="{{user.email}}" />
+
+    <label>Your Profile picture</label>
+    <input
+      name="img_url"
+      type="url"
+      placeholder="Upload a new profile picture"
+    />
+
+    <label>Description</label>
+
+    <textarea rows="5" cols="60" name="description">
+      {{user.description}}
+    </textarea>
+    <br />
+    <label>Enter your Password to confirm</label>
+    <input name="password" type="password" />
+    <br />
+    <br />
+    <button class="btn btn-primary" type="submit">EDIT</button>
+  </div>
+</form>

@@ -97,3 +97,11 @@ ul li {
   font-weight: bold;
   font-size: 2em;
 }
+
+.profile-btn {
+  margin: 20px 20px 10px 0px;
+}
+
+.profile-Img {
+  width: 200px;
+}
