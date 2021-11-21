@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const User = require('../models/user.model')
+const User = require('../models/User.model')
 
 router.get('/signup', (req, res, next) => {
 	res.render('auth/signup.hbs', { title: 'sign up or sign in' })

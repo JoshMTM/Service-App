@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const Service = require('../models/service.model')
+const Service = require('../models/Service.model')
 
 // View routes:
 
@@ -28,10 +28,8 @@ router.get('/services/new', (req, res, next) => {
 // Service Create
 router.post('/services', (req, res, next) => {
 	const service = req.body
-	Service.create()
-		.then((service) => {
-			res.redirect('/services')
-		})
+	Service.create(service)
+		.then(() => res.redirect('/services'))
 		.catch((err) => next(err))
 })
 

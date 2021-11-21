@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const { Schema, model } = require('mongoose')
 
-const ServiceSchema = new mongoose.Schema({
+const ServiceSchema = new Schema({
 	name: {
 		type: String,
 		required: true,
@@ -9,21 +9,19 @@ const ServiceSchema = new mongoose.Schema({
 		type: Number,
 		required: true,
 	},
-	time: {
-		type: Number,
-		required: true,
-	},
+	// time: {
+	// 	type: Number,
+	// 	required: true,
+	// },
 	description: {
 		type: String,
 		required: true,
 	},
-	photos: [
-		{
-			url: String,
-			required: true,
-		},
-	],
-	// The problem with the users: requesters/customers and providers/workers
+	// photos: [
+	// 	{
+	// 		url: String,
+	// 	},
+	// ],
 	requesters: [
 		{
 			type: Schema.Types.ObjectId,
@@ -33,6 +31,6 @@ const ServiceSchema = new mongoose.Schema({
 	//
 })
 
-const Service = mongoose.model('Service', ServiceSchema)
+const Service = model('Service', ServiceSchema)
 
 module.exports = Service
