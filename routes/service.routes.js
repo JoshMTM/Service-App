@@ -40,7 +40,7 @@ router.post('/services/save/:id', (req, res, next) => {
 	const id = req.params.id
 	const movie = req.body
 	Service.findByIdAndUpdate().then((movie) => {
-		res.redirect('services').catch((err) => next(err))
+		res.redirect('/services').catch((err) => next(err))
 	})
 })
 
