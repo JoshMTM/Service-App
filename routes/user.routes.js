@@ -137,7 +137,7 @@ router.post("/:id/profile", (req, res, next) => {
     img_url,
   })
     .then((user) => {
-      res.redirect("/");
+      res.render("user/user-profile", { user });
     })
     .catch((err) => {
       next("Failed to update your profile", err);
