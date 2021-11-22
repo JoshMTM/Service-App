@@ -1,23 +1,25 @@
 body {
 	padding: 50px;
 	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+	background-image: url(../images/bgimage.jpeg);
 }
 
 nav {
 	background-color: rgba(125, 138, 120, 0.5);
-	padding: 30px;
+	padding: 10px;
 	margin-bottom: 10px;
-	padding-bottom: 1px !important;
+	border-radius: 5px;
+	height: 14%;
 }
 nav > ul > li > a {
 	font-size: 18px;
 	text-decoration: none;
 	color: rgb(255, 255, 253);
 }
-nav > ul > li > p > a {
-	font-size: 30px;
-	text-decoration: none;
-	color: rgb(206, 206, 206);
+nav > a > img {
+	width: 150px;
+	float: left;
+	position: relative;
 }
 
 form {
@@ -74,9 +76,8 @@ form button:hover {
 }
 
 ul {
-	border-bottom: 2px solid #43a3e6;
 	height: 30px;
-	padding: 1em 0;
+	padding: 1em;
 	list-style-type: none;
 }
 
@@ -101,6 +102,8 @@ ul li {
 
 #to-left {
 	float: left;
+	align-items: left;
+	width: 0%;
 }
 
 #to-left p a {

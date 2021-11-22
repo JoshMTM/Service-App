@@ -1,9 +1,16 @@
 const { Schema, model } = require('mongoose')
+const User = require('./User.model')
 
 const ServiceSchema = new Schema({
 	name: {
 		type: String,
 		required: true,
+	},
+	// Adding a Service Provider to the Schema
+	serviceProvider: {
+		type: Schema.Types.ObjectId,
+		ref: 'User',
+		//here
 	},
 	description: {
 		type: String,
@@ -20,10 +27,9 @@ const ServiceSchema = new Schema({
 		type: Number,
 		required: true,
 	},
-	photos: {
+	serviceImage: {
 		type: String,
 	},
-
 	requesters: [
 		{
 			type: Schema.Types.ObjectId,

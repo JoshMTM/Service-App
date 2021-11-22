@@ -1,6 +1,12 @@
 <h2>Service Detail</h2>
 
 {{#if service}}
+	<section>
+		<div class='row'>
+			<div class='col-3'>Image:</div>
+			<div class='col'>{{service.serviceImage}}</div>
+		</div>
+	</section>
 	<div class='row'>
 		<div class='col-3'>Name:</div>
 		<div class='col'>{{service.name}}</div>
