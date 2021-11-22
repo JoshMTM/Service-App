@@ -17,7 +17,6 @@ router.get('/services', (req, res, next) => {
 router.get('/services/new', (req, res, next) => {
 	Service.find()
 		.then((services) => {
-			console.log(services)
 			res.render('services/form', { services })
 		})
 		.catch((err) => next(err))
