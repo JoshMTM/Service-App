@@ -20,7 +20,8 @@ require('./config')(app)
 
 // default value for title local
 const projectName = 'handeeApp'
-const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase()
+const capitalized = (string) =>
+	string[0].toUpperCase() + string.slice(1).toLowerCase()
 
 app.locals.title = `${capitalized(projectName)} created with IronLauncher`
 
@@ -36,12 +37,17 @@ app.use(
 			maxAge: 1000 * 24 * 60 * 60, // your cookie will be cleared after these seconds
 		},
 		store: MongoStore.create({
-			mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/lab-express-basic-auth',
+			mongoUrl:
+				process.env.MONGODB_URI ||
+				'mongodb://localhost/lab-express-basic-auth',
 			// Time to Live for sessions in DB. After that time it will delete it!
 			ttl: 24 * 60 * 60, // your session will be cleared after these seconds
 		}),
 	}),
 )
+
+// Handling the uploadied images
+app.use('/uploads/', express.static('uploads'))
 
 // 👇 Start handling routes here
 const index = require('./routes/index')

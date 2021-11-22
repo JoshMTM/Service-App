@@ -5,6 +5,12 @@ const ServiceSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	// Adding a Service Provider to the Schema
+	serviceProvider: {
+		type: Schema.Types.ObjectId,
+		ref: 'User',
+		//here
+	},
 	description: {
 		type: String,
 		required: true,
@@ -20,11 +26,9 @@ const ServiceSchema = new Schema({
 		type: Number,
 		required: true,
 	},
-	photos: [
-		{
-			url: String,
-		},
-	],
+	serviceImage: {
+		type: String,
+	},
 	requesters: [
 		{
 			type: Schema.Types.ObjectId,

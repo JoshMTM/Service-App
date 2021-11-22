@@ -51,9 +51,15 @@
 			id='price'
 		/>
 	</div>
-	<div class='form-group'>
-		<label for='photo'>Photos:</label>
-		<input type='url' id='photo' name='photo' />
-	</div>
+	<button type='submit' class='btn btn-primary'>Submit</button>
+</form>
+
+<form method='POST' action='/upload' enctype='multipart/form-data'>
+	<input
+		type='file'
+		name='serviceImage'
+		value='{{service.serviceImage}}'
+		accept='image/png, image/jpg'
+	/>
 	<button type='submit' class='btn btn-primary'>Submit</button>
 </form>

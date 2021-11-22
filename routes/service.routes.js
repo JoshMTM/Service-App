@@ -1,5 +1,35 @@
 const router = require('express').Router()
 const Service = require('../models/Service.model')
+// Multer Package
+const multer = require('multer')
+
+// Defining the storage
+const storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, './uploads/')
+	},
+	filename: function (req, file, cb) {
+		cb(null, new Date().toISOString() + file.originalname)
+	},
+})
+//Filtering the files
+const fileFilter = (req, file, cb) => {
+	// rejecting a file
+	if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+		cb(null, true)
+	} else {
+		cb(null, false)
+	}
+}
+
+// Executing multer and giving a destination to store files
+const upload = multer({
+	storage: storage,
+	limits: {
+		fileSize: 1024 * 1024 * 5,
+	},
+	fileFilter: fileFilter,
+})
 
 // View routes:
 
@@ -42,12 +72,19 @@ router.get('/services/edit/:id', (req, res, next) => {
 // Database routes:
 
 // Service Create
-router.post('/api/services', (req, res, next) => {
-	const service = req.body
-	Service.create(service)
-		.then(() => res.redirect('/services'))
-		.catch((err) => next(err))
-})
+router.post(
+	'/api/services',
+	upload.single('serviceImage'),
+	(req, res, next) => {
+		serviceImage = req.file.path
+		const service = req.body
+		//adding the service image
+
+		Service.create(service)
+			.then(() => res.redirect('/services'))
+			.catch((err) => next(err))
+	},
+)
 
 // Service Update
 router.post('/api/services/:id', (req, res, next) => {
