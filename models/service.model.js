@@ -20,11 +20,10 @@ const ServiceSchema = new Schema({
 		type: Number,
 		required: true,
 	},
-	photos: [
-		{
-			url: String,
-		},
-	],
+	photos: {
+		type: String,
+	},
+
 	requesters: [
 		{
 			type: Schema.Types.ObjectId,

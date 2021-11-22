@@ -3,9 +3,21 @@ body {
 	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-a {
-	color: #00b7ff;
+nav {
+	background-color: rgba(125, 138, 120, 0.5);
+	padding: 30px;
+	margin-bottom: 10px;
+	padding-bottom: 1px !important;
+}
+nav > ul > li > a {
+	font-size: 18px;
 	text-decoration: none;
+	color: rgb(255, 255, 253);
+}
+nav > ul > li > p > a {
+	font-size: 30px;
+	text-decoration: none;
+	color: rgb(206, 206, 206);
 }
 
 form {
@@ -97,30 +109,57 @@ ul li {
 	font-size: 2em;
 }
 
+/* Home Page */
+.HomePage {
+	padding: 5px 20px 20px 20px;
+	background-color: rgba(167, 176, 255, 0.466);
+}
+
 .welcomePage {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }
 
 .welcomePage > div {
-  text-align: center;
-  margin: 50px;
+	text-align: center;
 }
 .welcomePage > div > img {
-  width: 500px;
-  border-radius: 10px;
+	width: 500px;
+	border-radius: 10px;
 }
 .welcomePage > div > p {
-  width: 350px;
-  border-radius: 10px;
+	width: 350px;
+	border-radius: 10px;
 }
 .homepageTitle {
-  text-align: center;
+	text-align: center;
 }
 
-.profile-btn {
-  margin: 20px 20px 0px 0px;
+/* User profile */
+
+.userProfile {
+	background-color: rgba(167, 176, 255, 0.466);
+	padding: 30px;
+}
+.body-profile {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.body-profile > div > img {
+	border-radius: 30px;
+}
+.body-profile > div > h4 {
+	width: 80%;
+}
+.body-profile > div > h3 {
+	text-align: center;
+}
+
+.profile-btn a {
+	text-decoration: none;
+	color: white;
 }
 
 .profile-Img {
@@ -130,125 +169,125 @@ ul li {
 /* Footer bootstrap code lines */
 
 .footer {
-  background: linear-gradient(
-    rgba(8, 8, 8, 0.966),
-    rgba(121, 150, 134, 0.699),
-    rgba(105, 94, 90, 0.7)
-  );
-  background-size: cover;
-  margin-top: 2em;
-  border-radius: 5px;
+	background: linear-gradient(
+		rgba(8, 8, 8, 0.966),
+		rgba(121, 150, 134, 0.699),
+		rgba(105, 94, 90, 0.7)
+	);
+	background-size: cover;
+	margin-top: 2em;
+	border-radius: 5px;
 }
 
 .first {
-  margin-top: 10px;
-  color: rgb(206, 206, 206);
-  font-family: "Poppins", sans-serif;
-  text-align: center;
+	margin-top: 10px;
+	color: rgb(206, 206, 206);
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
 }
 
 .first h4 {
-  font-size: 20px;
-  letter-spacing: 3px;
-  color: #fff;
+	font-size: 20px;
+	letter-spacing: 3px;
+	color: #fff;
 }
 
 .first p {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 .second {
-  margin-top: 10px;
-  color: rgb(206, 206, 206);
-  font-family: "Poppins", sans-serif;
-  text-align: center;
+	margin-top: 10px;
+	color: rgb(206, 206, 206);
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
 }
 
 .second2 {
-  color: rgb(206, 206, 206);
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  border-top: 5px solid rgba(197, 202, 191, 0.623);
+	color: rgb(206, 206, 206);
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	border-top: 5px solid rgba(197, 202, 191, 0.623);
 }
 
 .second h4 {
-  font-size: 20px;
-  letter-spacing: 3px;
-  color: #fff;
+	font-size: 20px;
+	letter-spacing: 3px;
+	color: #fff;
 }
 .first li,
 .third li,
 .second li {
-  list-style: none;
-  padding-bottom: 5px;
+	list-style: none;
+	padding-bottom: 5px;
 }
 
 .second a,
 .second2 a {
-  color: rgb(206, 206, 206);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  transition: 0.2s;
+	color: rgb(206, 206, 206);
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+	transition: 0.2s;
 }
 
 .second a:hover,
 .second2 a:hover {
-  color: #fff;
-  transition: 0.2s;
-  text-shadow: 1px 1px 20px rgba(0, 0, 0, 1);
-  text-decoration: none;
+	color: #fff;
+	transition: 0.2s;
+	text-shadow: 1px 1px 20px rgba(0, 0, 0, 1);
+	text-decoration: none;
 }
 
 .third {
-  color: rgb(206, 206, 206);
-  font-family: "Poppins", sans-serif;
-  text-align: center;
+	color: rgb(206, 206, 206);
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
 }
 
 .third h4 {
-  font-size: 20px;
-  letter-spacing: 3px;
-  color: #fff;
+	font-size: 20px;
+	letter-spacing: 3px;
+	color: #fff;
 }
 .first a,
 .third a {
-  color: rgb(206, 206, 206);
-  text-decoration: none;
-  letter-spacing: 3px;
-  font-weight: bold;
-  font-size: 14px;
+	color: rgb(206, 206, 206);
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 @media screen and (max-width: 1000px) {
 }
 
 @media screen and (max-width: 1000px) {
-  .first {
-    text-align: center;
-  }
-  .second {
-    text-align: center;
-  }
-  .third {
-    text-align: center;
-  }
+	.first {
+		text-align: center;
+	}
+	.second {
+		text-align: center;
+	}
+	.third {
+		text-align: center;
+	}
 }
 
 .footer-items {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 }
 .footer-items > div {
-  margin-bottom: 55px;
+	margin-bottom: 55px;
 }
 
 .footer-items h1 {
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 /* End of footer code */
