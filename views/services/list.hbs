@@ -1,17 +1,34 @@
 <h1>Provided services</h1>
-<table>
+<table class='table'>
 	<thead>
-		<th>Photo Gallery</th>
-		<th>Description</th>
-		<th>Details</th>
+		<tr>
+			<th>Photo Gallery</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Address</th>
+			<th>Time</th>
+			<th>Price</th>
+			<th>Details</th>
+		</tr>
 	</thead>
 	<tbody>
-	    {{#each services}}
-	    <td>
-		    <tr><img src= {{this.url}} alt= 'The image could not be uploaded'></tr>
-		    <tr>{{this.name}} <br> {{this.description}}</tr>
-		    <tr><button>Details</button></tr>
-	    </td
-	    {{/each}}>
+		{{#each services as |service|}}
+			<tr>
+				<td></td>
+				<td>{{service.name}}</td>
+				<td>{{service.description}}</td>
+				<td>{{service.address}}</td>
+				<td>{{service.time}}</td>
+				<td>{{service.price}}</td>
+				<td>
+					<a href='/services/{{service.id}}'>Detail</a>
+					<a href='/api/services/delete/{{service.id}}'>Delete</a>
+				</td>
+			</tr>
+		{{/each}}
 	</tbody>
 </table>
+
+<script>
+
+</script>

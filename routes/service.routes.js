@@ -18,15 +18,31 @@ router.get('/services/new', (req, res, next) => {
 	Service.find()
 		.then((services) => {
 			console.log(services)
-			res.render('services/new', { services })
+			res.render('services/form', { services })
 		})
+		.catch((err) => next(err))
+})
+
+// Services read detail (read)
+router.get('/services/:id', (req, res, next) => {
+	const id = req.params.id
+	Service.findById(id)
+		.then((service) => res.render('services/detail', { service }))
+		.catch((err) => next(err))
+})
+
+// Services edit form (read)
+router.get('/services/edit/:id', (req, res, next) => {
+	const id = req.params.id
+	Service.findById(id)
+		.then((service) => res.render('services/form', { service }))
 		.catch((err) => next(err))
 })
 
 // Database routes:
 
 // Service Create
-router.post('/services', (req, res, next) => {
+router.post('/api/services', (req, res, next) => {
 	const service = req.body
 	Service.create(service)
 		.then(() => res.redirect('/services'))
@@ -34,21 +50,19 @@ router.post('/services', (req, res, next) => {
 })
 
 // Service Update
-router.post('/services/save/:id', (req, res, next) => {
+router.post('/api/services/:id', (req, res, next) => {
 	const id = req.params.id
-	const movie = req.body
-	Service.findByIdAndUpdate().then((movie) => {
-		res.redirect('/services').catch((err) => next(err))
-	})
+	const service = req.body
+	Service.findByIdAndUpdate(id, service)
+		.then(() => res.redirect('/services/' + id))
+		.catch((err) => next(err))
 })
 
 // Delete Service
-router.get('/services/delete/:id', (req, res, next) => {
+router.get('/api/services/delete/:id', (req, res, next) => {
 	const id = req.params.id
-	Service.findByIdAndDelete()
-		.then(() => {
-			res.redirect('/services')
-		})
+	Service.findByIdAndDelete(id)
+		.then(() => res.redirect('/services'))
 		.catch((err) => next(err))
 })
 

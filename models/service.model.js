@@ -5,23 +5,26 @@ const ServiceSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	price: {
-		type: Number,
-		required: true,
-	},
-	// time: {
-	// 	type: Number,
-	// 	required: true,
-	// },
 	description: {
 		type: String,
 		required: true,
 	},
-	// photos: [
-	// 	{
-	// 		url: String,
-	// 	},
-	// ],
+	address: {
+		type: String,
+		required: true,
+	},
+	time: {
+		type: Number,
+	},
+	price: {
+		type: Number,
+		required: true,
+	},
+	photos: [
+		{
+			url: String,
+		},
+	],
 	requesters: [
 		{
 			type: Schema.Types.ObjectId,
