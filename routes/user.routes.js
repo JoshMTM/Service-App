@@ -89,7 +89,6 @@ router.post("/profile", (req, res, next) => {
 
         if (isMatching) {
           req.session.myProperty = userObj;
-          console.log(user);
           res.render("user/user-profile", { user });
         } else {
           res.render("user/signin-form.hbs", {
@@ -128,14 +127,18 @@ router.post("/:id/profile", (req, res, next) => {
   const { firstName, lastName, expertise, email, description, img_url } =
     req.body;
   const { id } = req.params;
-  User.findByIdAndUpdate(id, {
-    firstName,
-    lastName,
-    expertise,
-    email,
-    description,
-    img_url,
-  })
+  User.findByIdAndUpdate(
+    id,
+    {
+      firstName,
+      lastName,
+      expertise,
+      email,
+      description,
+      img_url,
+    },
+    { new: true }
+  )
     .then((user) => {
       res.render("user/user-profile", { user });
     })
