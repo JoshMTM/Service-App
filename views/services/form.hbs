@@ -1,65 +1,69 @@
 <h2>Add or edit a service</h2>
 
-<form method='post' action='/api/services/{{service.id}}'>
-	<div class='form-group'>
-		<label for='name'>Name:</label>
+<form
+	method="post"
+	action="/api/services/{{service.id}}"
+	enctype="multipart/form-data"
+>
+	<div class="form-group">
+		<label for="name">Name:</label>
 		<input
-			name='name'
-			value='{{service.name}}'
-			type='text'
-			class='form-control'
-			id='name'
+			name="name"
+			value="{{service.name}}"
+			type="text"
+			class="form-control"
+			id="name"
 		/>
 	</div>
-	<div class='form-group'>
-		<label for='description'>Description:</label>
+	<div class="form-group">
+		<label for="description">Description:</label>
 		<input
-			name='description'
-			value='{{service.description}}'
-			type='text'
-			class='form-control'
-			id='description'
+			name="description"
+			value="{{service.description}}"
+			type="text"
+			class="form-control"
+			id="description"
 		/>
 	</div>
-	<div class='form-group'>
-		<label for='address'>Address:</label>
+	<div class="form-group">
+		<label for="address">Address:</label>
 		<input
-			name='address'
-			value='{{service.address}}'
-			type='text'
-			class='form-control'
-			id='address'
+			name="address"
+			value="{{service.address}}"
+			type="text"
+			class="form-control"
+			id="address"
 		/>
 	</div>
-	<div class='form-group'>
-		<label for='time'>Time:</label>
+	<div class="form-group">
+		<label for="time">Time:</label>
 		<input
-			name='time'
-			value='{{service.time}}'
-			type='text'
-			class='form-control'
-			id='time'
+			name="time"
+			value="{{service.time}}"
+			type="text"
+			class="form-control"
+			id="time"
 		/>
 	</div>
-	<div class='form-group'>
-		<label for='price'>Price/Hour:</label>
+	<div class="form-group">
+		<label for="price">Price/Hour:</label>
 		<input
-			name='price'
-			value='{{service.price}}'
-			type='text'
-			class='form-control'
-			id='price'
+			name="price"
+			value="{{service.price}}"
+			type="text"
+			class="form-control"
+			id="price"
 		/>
 	</div>
-	<button type='submit' class='btn btn-primary'>Submit</button>
-</form>
+	<div class="form-group">
+		<label for="image">Images:</label>
+		<input
+			type="file"
+			name="serviceImage"
+			value="{{service.serviceImage}}"
+		/>
+	</div>
+	{{! accept="image/png, image/jpg" }}
 
-<form method='POST' action='/upload' enctype='multipart/form-data'>
-	<input
-		type='file'
-		name='serviceImage'
-		value='{{service.serviceImage}}'
-		accept='image/png, image/jpg'
-	/>
-	<button type='submit' class='btn btn-primary'>Submit</button>
+	<button type="submit" class="btn btn-primary">Submit</button>
 </form>

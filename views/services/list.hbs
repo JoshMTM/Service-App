@@ -1,28 +1,26 @@
 <h1>Provided services</h1>
-<table class='table'>
+<table class="table service-list">
 	<thead>
 		<tr>
-			<th>Photo Gallery</th>
 			<th>Name</th>
 			<th>Description</th>
 			<th>Address</th>
 			<th>Time</th>
 			<th>Price</th>
-			<th>Details</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
 		{{#each services as |service|}}
 			<tr>
-				<td>{{service.serviceImage}}</td>
 				<td>{{service.name}}</td>
 				<td>{{service.description}}</td>
 				<td>{{service.address}}</td>
 				<td>{{service.time}}</td>
 				<td>{{service.price}}</td>
 				<td>
-					<a href='/services/{{service.id}}'>Detail</a>
-					<a href='/api/services/delete/{{service.id}}'>Delete</a>
+					<a href="/services/{{service.id}}">Detail</a>
+					<a href="/api/services/delete/{{service.id}}">Delete</a>
 				</td>
 			</tr>
 		{{/each}}

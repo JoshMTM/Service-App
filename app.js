@@ -46,9 +46,6 @@ app.use(
 	}),
 )
 
-// Handling the uploadied images
-app.use('/uploads/', express.static('uploads'))
-
 // 👇 Start handling routes here
 const index = require('./routes/index')
 app.use('/', index)

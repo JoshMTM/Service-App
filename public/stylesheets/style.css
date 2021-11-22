@@ -104,3 +104,13 @@ ul li {
 .profile-Img {
 	width: 200px;
 }
+
+#serviceImage {
+	width: 300px;
+	height: 200px;
+}
+
+.service-detail img {
+	width: 100px;
+	height: auto;
+}
