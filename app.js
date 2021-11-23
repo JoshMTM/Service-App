@@ -11,8 +11,8 @@ const express = require('express')
 
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
-const hbs = require("hbs");
-hbs.registerPartials("views" + "/partials");
+const hbs = require('hbs')
+hbs.registerPartials('views' + '/partials')
 
 const app = express()
 
@@ -39,16 +39,12 @@ app.use(
 		},
 		store: MongoStore.create({
 			mongoUrl:
-				process.env.MONGODB_URI ||
-				'mongodb://localhost/lab-express-basic-auth',
+				process.env.MONGODB_URI || 'mongodb://localhost/handeeApp',
 			// Time to Live for sessions in DB. After that time it will delete it!
 			ttl: 24 * 60 * 60, // your session will be cleared after these seconds
 		}),
 	}),
 )
-
-// Handling the uploadied images
-app.use('/uploads/', express.static('uploads'))
 
 // 👇 Start handling routes here
 const index = require('./routes/index')

@@ -25,10 +25,32 @@ nav > a > img {
 	float: left;
 	position: relative;
 }
+h1 {
+	text-align: center;
+	margin: 70px;
+}
+
+h2 {
+	text-align: center;
+	margin: 50px;
+}
+h4 {
+	text-align: center;
+	padding: 5px;
+}
+
+td,
+tr {
+	font-size: 1.3rem;
+}
 
 form {
 	margin: 30px auto;
 	width: 380px;
+}
+
+label {
+	font-size: large;
 }
 
 form label {
@@ -299,3 +321,22 @@ ul li {
 	margin-bottom: 10px;
 }
 /* End of footer code */
+#image-of-service {
+	width: 100%;
+	height: auto;
+}
+
+.field {
+	padding: 1rem 2rem;
+	background-color: #f4f4f4;
+	border-radius: 4px;
+	margin: 0.5rem 0 2rem 0;
+}
+
+.table {
+	color: white;
+}
+
+.table td {
+	padding: 1.5rem 0.75rem;
+}

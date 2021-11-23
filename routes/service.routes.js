@@ -1,35 +1,39 @@
+const path = require('path')
 const router = require('express').Router()
-const Service = require('../models/Service.model')
-// Multer Package
 const multer = require('multer')
+const Service = require('../models/Service.model')
+
+const pathUploads = path.join(__dirname, '../uploads')
+const upload = multer({ dest: pathUploads })
 
 // Defining the storage
-const storage = multer.diskStorage({
-	destination: function (req, file, cb) {
-		cb(null, './uploads/')
-	},
-	filename: function (req, file, cb) {
-		cb(null, new Date().toISOString() + file.originalname)
-	},
-})
+// const storage = multer.diskStorage({
+// 	destination: function (req, file, cb) {
+// 		cb(null, './uploads/')
+// 	},
+// 	filename: function (req, file, cb) {
+// 		cb(null, new Date().toISOString() + file.originalname)
+// 	},
+// })
+
 //Filtering the files
-const fileFilter = (req, file, cb) => {
-	// rejecting a file
-	if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-		cb(null, true)
-	} else {
-		cb(null, false)
-	}
-}
+// const fileFilter = (req, file, cb) => {
+// 	// rejecting a file
+// 	if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+// 		cb(null, true)
+// 	} else {
+// 		cb(null, false)
+// 	}
+// }
 
 // Executing multer and giving a destination to store files
-const upload = multer({
-	storage: storage,
-	limits: {
-		fileSize: 1024 * 1024 * 5,
-	},
-	fileFilter: fileFilter,
-})
+// const upload = multer({
+// 	storage: storage,
+// 	limits: {
+// 		fileSize: 1024 * 1024 * 5,
+// 	},
+// 	fileFilter: fileFilter,
+// })
 
 // View routes:
 
@@ -69,6 +73,13 @@ router.get('/services/edit/:id', (req, res, next) => {
 		.catch((err) => next(err))
 })
 
+// Image download (read)
+router.get('/services/images/:filename', (req, res, next) => {
+	const filename = req.params.filename
+	const filepath = path.join(pathUploads, filename)
+	res.sendFile(filepath, { headers: { 'content-type': 'image/png' } })
+})
+
 // Database routes:
 
 // Service Create
@@ -76,10 +87,8 @@ router.post(
 	'/api/services',
 	upload.single('serviceImage'),
 	(req, res, next) => {
-		serviceImage = req.file.path
 		const service = req.body
-		//adding the service image
-
+		service.serviceImage = req.file
 		Service.create(service)
 			.then(() => res.redirect('/services'))
 			.catch((err) => next(err))
@@ -87,13 +96,18 @@ router.post(
 )
 
 // Service Update
-router.post('/api/services/:id', (req, res, next) => {
-	const id = req.params.id
-	const service = req.body
-	Service.findByIdAndUpdate(id, service)
-		.then(() => res.redirect('/services/' + id))
-		.catch((err) => next(err))
-})
+router.post(
+	'/api/services/:id',
+	upload.single('serviceImage'),
+	(req, res, next) => {
+		const id = req.params.id
+		const service = req.body
+		console.log(service)
+		Service.findByIdAndUpdate(id, service)
+			.then(() => res.redirect('/services/' + id))
+			.catch((err) => next(err))
+	},
+)
 
 // Delete Service
 router.get('/api/services/delete/:id', (req, res, next) => {
