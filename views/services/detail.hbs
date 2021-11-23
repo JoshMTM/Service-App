@@ -1,16 +1,10 @@
 <h2>Service Details</h2>
 
 {{#if service}}
-	<div class="row mb-4">
-		<div class="col">
-			<a
-				href="/services/edit/{{service.id}}"
-				class="btn btn-primary"
-			>Edit</a></div>
-	</div>
+
 	<div class="row">
 		<div class="col">
-			<h5>{{service.name}}:</h5>
+			<h4>{{service.name}}:</h4>
 			<img
 				id="image-of-service"
 				src="/services/images/{{service.serviceImage.filename}}"
@@ -26,8 +20,16 @@
 			<div class="field">{{service.time}}</div>
 			<h5>Price:</h5>
 			<div class="field">{{service.price}}</div>
+			<div class="col offset-3">
+			<a
+				href="/services/edit/{{service.id}}"
+				class="btn btn-primary"
+			>Request this service</a></div>
+	</div>
 		</div>
 	</div>
+	<div class="row mb-4">
+		
 
 	{{! <button>Request the Service</button> }}
 {{/if}}

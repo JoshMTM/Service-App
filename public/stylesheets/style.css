@@ -7,13 +7,32 @@ a {
 	color: #00b7ff;
 	text-decoration: none;
 }
+h1 {
+	text-align: center;
+	margin: 70px;
+}
+
 h2 {
 	text-align: center;
+	margin: 50px;
+}
+h4 {
+	text-align: center;
+	padding: 5px;
+}
+
+td,
+tr {
+	font-size: 1.3rem;
 }
 
 form {
 	margin: 30px auto;
 	width: 380px;
+}
+
+label {
+	font-size: large;
 }
 
 form label {
