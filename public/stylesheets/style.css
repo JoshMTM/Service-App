@@ -1,11 +1,15 @@
 body {
-	padding: 50px;
+	padding: 20px;
 	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 	background-image: url(../images/bgimage.jpeg);
 }
 
 nav {
-	background-color: rgba(125, 138, 120, 0.5);
+	background: linear-gradient(
+		rgba(87, 87, 87, 0.966),
+		rgba(121, 150, 134, 0.699),
+		rgba(105, 94, 90, 0.7)
+	);
 	padding: 10px;
 	margin-bottom: 10px;
 	border-radius: 5px;
@@ -115,7 +119,8 @@ ul li {
 /* Home Page */
 .HomePage {
 	padding: 5px 20px 20px 20px;
-	background-color: rgba(167, 176, 255, 0.466);
+	border-radius: 5px;
+	color: rgba(207, 125, 176, 0.918);
 }
 
 .welcomePage {
