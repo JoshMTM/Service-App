@@ -44,7 +44,8 @@ router.get('/services', (req, res, next) => {
 })
 
 // Services new form (read)
-router.get('/services/new', (req, res, next) => {
+router.get('/:id/services/new', (req, res, next) => {
+	const { id } = req.params
 	Service.find()
 		.then(() => {
 			res.render('services/new')
