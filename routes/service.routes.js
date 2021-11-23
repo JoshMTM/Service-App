@@ -63,13 +63,19 @@ router.get('/services/:id', (req, res, next) => {
 	const id = req.params.id
 	// How do we call the user, who is logged in?
 	const user = req.session.myProperty
-	console.log(req.session.myProperty)
+
 	Service.findById(id)
+		.populate('serviceProvider')
 		.then((service) => {
 			console.log('user ', user._id)
 			console.log('service ', service.serviceProvider)
-			let isServiceProvider = user._id == service.serviceProvider
-			res.render('services/detail', { service, isServiceProvider })
+			let isServiceProvider = user._id == service.serviceProvider._id
+			res.render('services/detail', {
+				service,
+				isServiceProvider,
+				firstName: service.serviceProvider.firstName,
+				lastName: service.serviceProvider.lastName,
+			})
 		})
 		.catch((err) => next(err))
 })
@@ -99,12 +105,12 @@ router.post(
 		const service = req.body
 		service.serviceImage = req.file
 		service.serviceProvider = req.session.myProperty._id
+
 		Service.create(service)
 			.then(() => res.redirect('/services'))
 			.catch((err) => next(err))
 	},
 )
-
 // Service Update
 router.post(
 	'/api/services/:id',
