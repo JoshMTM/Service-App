@@ -28,11 +28,7 @@ const ServiceSchema = new Schema({
 		required: true,
 	},
 	serviceImage: {
-		originalname: String,
-		encoding: String,
-		mimetype: String,
-		filename: String,
-		size: Number,
+		type: String,
 	},
 	requesters: [
 		{

@@ -5,6 +5,12 @@ body {
 }
 
 nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
 	background: linear-gradient(
 		rgba(87, 87, 87, 0.966),
 		rgba(121, 150, 134, 0.699),
@@ -24,6 +30,7 @@ nav > a > img {
 	width: 150px;
 	float: left;
 	position: relative;
+	margin-right: 5px;
 }
 h1 {
 	text-align: center;
@@ -333,10 +340,25 @@ ul li {
 	margin: 0.5rem 0 2rem 0;
 }
 
-.table {
-	color: white;
-}
-
 .table td {
 	padding: 1.5rem 0.75rem;
+}
+
+.detailsPage {
+	background-color: rgb(199, 197, 197);
+	border-radius: 10px;
+	padding: 10px;
+}
+.detailsPage > h1 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.btn-success {
+	width: 100px;
+}
+.inputsearch {
+	width: 150px;
+	margin-left: -25px;
+	height: 34px;
+	border-radius: 5px;
 }

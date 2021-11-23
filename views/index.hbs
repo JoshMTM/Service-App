@@ -21,5 +21,14 @@
 
 </div>
 </div>
+<container class="sampleServices">
+  {{#each services}}
+  <div>
+  <img src="{{this.serviceImage}}"/>
+  {{this.name}}
+  <button>View details</button>
+  </div>
+  {{/each}}
+</container>
 
 {{> footer}}

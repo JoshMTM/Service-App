@@ -1,8 +1,16 @@
 const router = require('express').Router()
+const Service = require('../models/Service.model')
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-	res.render('index')
+	Service.find()
+		.then((services) => {
+			console.log(services)
+			res.render('index', { services })
+		})
+		.catch((err) => {
+			next(err)
+		})
 })
 
 module.exports = router

@@ -1,3 +1,4 @@
+<div class="detailsPage">
 <h2>Service Details</h2>
 
 {{#if service}}
@@ -5,10 +6,7 @@
 	<div class="row">
 		<div class="col">
 			<h4>{{service.name}}:</h4>
-			<img
-				id="image-of-service"
-				src="/services/images/{{service.serviceImage.filename}}"
-			/>
+			<img src="{{service.serviceImage}}" alt="serviceImage"/>
 		</div>
 
 		<div class="col offset-1">
@@ -41,5 +39,5 @@
 	<div class="row mb-4">
 		
 
-	{{! <button>Request the Service</button> }}
 {{/if}}
+</div>

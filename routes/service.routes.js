@@ -1,6 +1,8 @@
 const path = require('path')
 const router = require('express').Router()
 const multer = require('multer')
+const uploader = require('./cloudinary.config')
+
 const Service = require('../models/Service.model')
 
 const pathUploads = path.join(__dirname, '../uploads')
@@ -68,8 +70,6 @@ router.get('/services/:id', (req, res, next) => {
 	Service.findById(id)
 		.populate('serviceProvider')
 		.then((service) => {
-			console.log('user ', user._id)
-			console.log('service ', service.serviceProvider)
 			let isServiceProvider = user._id == service.serviceProvider._id
 			res.render('services/detail', {
 				service,
@@ -101,13 +101,27 @@ router.get('/services/images/:filename', (req, res, next) => {
 // Service Create
 router.post(
 	'/api/services',
-	upload.single('serviceImage'),
+	uploader.single('serviceImage'),
 	(req, res, next) => {
-		const service = req.body
-		service.serviceImage = req.file
-		service.serviceProvider = req.session.myProperty._id
-
-		Service.create(service)
+		const {
+			name,
+			description,
+			address,
+			time,
+			price,
+			serviceImage,
+			requesters,
+		} = req.body
+		Service.create({
+			name,
+			serviceProvider: req.session.myProperty._id,
+			description,
+			address,
+			time,
+			price,
+			serviceImage: req.file.path,
+			requesters,
+		})
 			.then(() => res.redirect('/services'))
 			.catch((err) => next(err))
 	},

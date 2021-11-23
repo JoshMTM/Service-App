@@ -2,6 +2,7 @@ const express = require('express')
 const User = require('../models/User.model')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
+const uploader = require('./cloudinary.config')
 
 router.get('/', (req, res, next) => {})
 
@@ -13,7 +14,7 @@ router.get('/signup', (req, res, next) => {
 	res.render('user/signup-form.hbs')
 })
 
-router.post('/signup/profile', (req, res, next) => {
+router.post('/signup/profile', uploader.single('img_url'), (req, res, next) => {
 	let {
 		firstName,
 		lastName,
@@ -56,7 +57,7 @@ router.post('/signup/profile', (req, res, next) => {
 		email,
 		password: hash,
 		description,
-		img_url,
+		img_url: req.file.path,
 	})
 		.then((user) => {
 			res.render('user/user-profile', { user })

@@ -1,33 +1,32 @@
-<h1>Provided services</h1>
-<table class="table service-list">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Description</th>
-			<th>Address</th>
-			<th>Time</th>
-			<th>Price</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		{{#each services as |service|}}
-			<img src='{{service.photos}}' />
+<div class="detailsPage">
+	<h1>Provided services</h1>
+	<table class="table service-list">
+		<thead>
 			<tr>
-				<td>{{service.name}}</td>
-				<td>{{service.description}}</td>
-				<td>{{service.address}}</td>
-				<td>{{service.time}}</td>
-				<td>{{service.price}}</td>
-				<td>
-					<a href="/services/{{service.id}}">Detail</a>
-					<a href="/api/services/delete/{{service.id}}">Delete</a>
-				</td>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Address</th>
+				<th>Time</th>
+				<th>Price</th>
+				<th></th>
 			</tr>
-		{{/each}}
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			{{#each services as |service|}}
+				<img src="{{service.photos}}" />
+				<tr>
+					<td>{{service.name}}</td>
+					<td>{{service.description}}</td>
+					<td>{{service.address}}</td>
+					<td>{{service.time}}</td>
+					<td>{{service.price}}</td>
+					<td>
+						<a href="/services/{{service.id}}">Detail</a>
+						<a href="/api/services/delete/{{service.id}}">Delete</a>
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
 
-<script>
-
-</script>
+</div>
