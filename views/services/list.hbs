@@ -15,20 +15,16 @@
 		{{#each services as |service|}}
 			<tr>
 				<td>{{service.name}}</td>
-				<td>{{firstName}} {{lastName}}</td>
+				<td>{{service.serviceProvider.firstName}}
+					{{service.serviceProvider.lastName}}</td>
 				<td>{{service.description}}</td>
 				<td>{{service.address}}</td>
 				<td>{{service.time}}</td>
 				<td>{{service.price}}</td>
 				<td>
 					<a href="/services/{{service.id}}">Detail</a>
-					<a href="/api/services/delete/{{service.id}}">Delete</a>
 				</td>
 			</tr>
 		{{/each}}
 	</tbody>
 </table>
-
-<script>
-
-</script>

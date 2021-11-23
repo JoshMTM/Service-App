@@ -142,7 +142,12 @@ ul li {
 .table td {
 	padding: 1.5rem 0.75rem;
 }
-
+/*class for the rating stars*/
 .checked {
 	color: orange;
+}
+/*class for the 'About us' Page */
+.stark-family {
+	display: flex;
+	justify-content: row;
 }
