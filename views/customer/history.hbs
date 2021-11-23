@@ -1,0 +1,27 @@
+<h2>Current Orders</h2>
+
+{{#each orderCurrent}}
+	<div class="row">
+		<div class="col">
+			<img
+				id="image-of-service"
+				src="/services/images/{{service.serviceImage.filename}}"
+			/>
+		</div>
+		<div class="col">{{service.name}} {{service.description}}</div>
+	</div>
+{{/each}}
+
+<h2>Completed Orders</h2>
+
+{{#each orderCompleted}}
+	<div class="row">
+		<div class="col">
+			<img
+				id="image-of-service"
+				src="/services/images/{{service.serviceImage.filename}}"
+			/>
+		</div>
+		<div class="col">{{service.name}} {{service.description}}</div>
+	</div>
+{{/each}}

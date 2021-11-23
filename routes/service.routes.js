@@ -43,7 +43,11 @@ router.get('/services', (req, res, next) => {
 		.populate('requesters')
 		.populate('serviceProvider')
 		.then((services) => {
-			res.render('services/list', { services })
+			res.render('services/list', {
+				services,
+				/*	firstName: service.serviceProvider.firstName,
+				lastName: service.serviceProvider.lastName,*/
+			})
 		})
 		.catch((err) => next(err))
 })

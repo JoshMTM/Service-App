@@ -3,6 +3,7 @@
 	<thead>
 		<tr>
 			<th>Name</th>
+			<th>Service Provider</th>
 			<th>Description</th>
 			<th>Address</th>
 			<th>Time</th>
@@ -14,6 +15,7 @@
 		{{#each services as |service|}}
 			<tr>
 				<td>{{service.name}}</td>
+				<td>{{firstName}} {{lastName}}</td>
 				<td>{{service.description}}</td>
 				<td>{{service.address}}</td>
 				<td>{{service.time}}</td>
