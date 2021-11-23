@@ -12,6 +12,8 @@
 		</div>
 
 		<div class="col offset-1">
+			<h5>Service Provider:</h5>
+			<div class="field">{{service.serviceProvider}}</div>
 			<h5>Description:</h5>
 			<div class="field">{{service.description}}</div>
 			<h5>Address:</h5>
@@ -21,10 +23,18 @@
 			<h5>Price:</h5>
 			<div class="field">{{service.price}}</div>
 			<div class="col offset-3">
+				{{#if isServiceProvider}}
 			<a
 				href="/services/edit/{{service.id}}"
 				class="btn btn-primary"
-			>Request this service</a></div>
+			>Edit this service</a>	
+			{{else}}
+			<a
+				href="/services/edit/{{service.id}}"
+				class="btn btn-primary"
+			>Request this service</a>	
+			{{/if}}
+			</div>
 	</div>
 		</div>
 	</div>

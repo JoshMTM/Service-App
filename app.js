@@ -38,8 +38,7 @@ app.use(
 		},
 		store: MongoStore.create({
 			mongoUrl:
-				process.env.MONGODB_URI ||
-				'mongodb://localhost/lab-express-basic-auth',
+				process.env.MONGODB_URI || 'mongodb://localhost/handeeApp',
 			// Time to Live for sessions in DB. After that time it will delete it!
 			ttl: 24 * 60 * 60, // your session will be cleared after these seconds
 		}),

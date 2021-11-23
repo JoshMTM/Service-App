@@ -41,6 +41,7 @@ const upload = multer({ dest: pathUploads })
 router.get('/services', (req, res, next) => {
 	Service.find()
 		.populate('requesters')
+		.populate('serviceProvider')
 		.then((services) => {
 			res.render('services/list', { services })
 		})
@@ -51,7 +52,7 @@ router.get('/services', (req, res, next) => {
 router.get('/services/new', (req, res, next) => {
 	Service.find()
 		.then((services) => {
-			console.log(services)
+			//console.log(services)
 			res.render('services/form', { services })
 		})
 		.catch((err) => next(err))
@@ -60,8 +61,16 @@ router.get('/services/new', (req, res, next) => {
 // Services read detail (read)
 router.get('/services/:id', (req, res, next) => {
 	const id = req.params.id
+	// How do we call the user, who is logged in?
+	const user = req.session.myProperty
+	console.log(req.session.myProperty)
 	Service.findById(id)
-		.then((service) => res.render('services/detail', { service }))
+		.then((service) => {
+			console.log('user ', user._id)
+			console.log('service ', service.serviceProvider)
+			let isServiceProvider = user._id == service.serviceProvider
+			res.render('services/detail', { service, isServiceProvider })
+		})
 		.catch((err) => next(err))
 })
 
@@ -89,6 +98,7 @@ router.post(
 	(req, res, next) => {
 		const service = req.body
 		service.serviceImage = req.file
+		service.serviceProvider = req.session.myProperty._id
 		Service.create(service)
 			.then(() => res.redirect('/services'))
 			.catch((err) => next(err))
