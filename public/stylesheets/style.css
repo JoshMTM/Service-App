@@ -7,6 +7,9 @@ a {
 	color: #00b7ff;
 	text-decoration: none;
 }
+h2 {
+	text-align: center;
+}
 
 form {
 	margin: 30px auto;
@@ -105,12 +108,18 @@ ul li {
 	width: 200px;
 }
 
-#serviceImage {
-	width: 300px;
-	height: 200px;
+#image-of-service {
+	width: 100%;
+	height: auto;
 }
 
-.service-detail img {
-	width: 100px;
-	height: auto;
+.field {
+	padding: 1rem 2rem;
+	background-color: #f4f4f4;
+	border-radius: 4px;
+	margin: 0.5rem 0 2rem 0;
+}
+
+.table td {
+	padding: 1.5rem 0.75rem;
 }

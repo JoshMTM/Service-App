@@ -1,41 +1,33 @@
-<section class="service-detail">
-	<h2>Service Detail</h2>
+<h2>Service Details</h2>
 
-	{{#if service}}
-		<div class="row">
-			<div class="col-3">Name:</div>
-			<div class="col">{{service.name}}</div>
-		</div>
-		<div class="row">
-			<div class="col-3">Description:</div>
-			<div class="col">{{service.description}}</div>
-		</div>
-		<div class="row">
-			<div class="col-3">Address:</div>
-			<div class="col">{{service.address}}</div>
-		</div>
-		<div class="row">
-			<div class="col-3">Time:</div>
-			<div class="col">{{service.time}}</div>
-		</div>
-		<div class="row">
-			<div class="col-3">Price:</div>
-			<div class="col">{{service.price}}</div>
-		</div>
-		<div class="row">
-			<div class="col-3">Images:</div>
-			<div class="col">
-				<img src="/services/images/{{service.serviceImage.filename}}" />
-			</div>
-		</div>
-
-		<p>
+{{#if service}}
+	<div class="row mb-4">
+		<div class="col">
 			<a
 				href="/services/edit/{{service.id}}"
 				class="btn btn-primary"
-			>Edit</a>
-		</p>
+			>Edit</a></div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<h5>{{service.name}}:</h5>
+			<img
+				id="image-of-service"
+				src="/services/images/{{service.serviceImage.filename}}"
+			/>
+		</div>
 
-		{{! <button>Request the Service</button> }}
-	{{/if}}
-</section>
+		<div class="col offset-1">
+			<h5>Description:</h5>
+			<div class="field">{{service.description}}</div>
+			<h5>Address:</h5>
+			<div class="field">{{service.address}}</div>
+			<h5>Time:</h5>
+			<div class="field">{{service.time}}</div>
+			<h5>Price:</h5>
+			<div class="field">{{service.price}}</div>
+		</div>
+	</div>
+
+	{{! <button>Request the Service</button> }}
+{{/if}}
