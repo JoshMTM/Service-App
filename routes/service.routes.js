@@ -3,7 +3,7 @@ const router = require('express').Router()
 const multer = require('multer')
 const uploader = require('./cloudinary.config')
 
-const Service = require('../models/Service.model')
+const Service = require('../models/service.model')
 
 const pathUploads = path.join(__dirname, '../uploads')
 const upload = multer({ dest: pathUploads })
