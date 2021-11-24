@@ -364,6 +364,7 @@ ul li {
 }
 container > div > img {
 	width: 250px;
+	height: 180px;
 }
 container > div > p {
 	color: white;
@@ -372,6 +373,7 @@ container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 container > div {
 	margin: 10px;
