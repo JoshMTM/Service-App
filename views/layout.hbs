@@ -41,13 +41,30 @@
 	<body>
 		<nav>
 			<a href="/"><img src="./images/logo1.png" alt="logo" /></a>
-			<form class="form-inline" action="/action_page.php">
-				<input
-					class="inputsearch"
-					type="text"
-					placeholder="Search eg- Home cleaning"
-				/>
-				<button class="btn-success" type="submit">Search</button>
+			<form action="/servicesearch/:{{output}}">
+
+				<select name="category" id="category">
+					<option value="cleaning">Cleaning</option>
+					<option value="construction">Construction</option>
+					<option value="electronics">Electronics</option>
+					<option value="plumbing">Plumbing</option>
+					<option value="electrical">Electrical</option>
+					<option value="moving">moving</option>
+					<option value="painting">Painting</option>
+					<option value="massage">Body Massage</option>
+					<option value="mechanical">Mechanical</option>
+
+				</select>
+				<button
+					onclick="getOption()"
+					class="btn-success"
+					type="submit"
+				>Search</button>
+				<script>
+					function getOption() { selectElement =
+					document.querySelector('#category'); output =
+					selectElement.value; }
+				</script>
 			</form>
 			<ul>
 				<div id="to-left">

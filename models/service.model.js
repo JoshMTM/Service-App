@@ -11,6 +11,21 @@ const ServiceSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'User',
 	},
+	category: {
+		type: String,
+		required: true,
+		enum: [
+			'cleaning',
+			'construction',
+			'electronics',
+			'plumbing',
+			'electrical',
+			'moving',
+			'painting',
+			'massage',
+			'mechanical',
+		],
+	},
 	description: {
 		type: String,
 		required: true,

@@ -1,7 +1,7 @@
 body {
 	padding: 20px;
 	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-	background-image: url(../images/bgimage.jpeg);
+	background-image: url(../images/bgbody.jpeg);
 }
 
 nav {
@@ -149,7 +149,7 @@ ul li {
 .HomePage {
 	padding: 5px 20px 20px 20px;
 	border-radius: 5px;
-	color: rgba(207, 125, 176, 0.918);
+	color: white;
 }
 
 .welcomePage {
@@ -375,6 +375,7 @@ container {
 }
 container > div {
 	margin: 10px;
+}
 /*class for the rating stars*/
 .checked {
 	color: orange;
@@ -383,4 +384,8 @@ container > div {
 .stark-family {
 	display: flex;
 	justify-content: row;
+}
+.col > img {
+	width: 450px;
+	border-radius: 10px;
 }

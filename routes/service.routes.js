@@ -76,6 +76,7 @@ router.post(
 		const {
 			name,
 			description,
+			category,
 			address,
 			time,
 			price,
@@ -85,6 +86,7 @@ router.post(
 		Service.create({
 			name,
 			serviceProvider: req.session.myProperty._id,
+			category,
 			description,
 			address,
 			time,
@@ -116,6 +118,17 @@ router.get('/api/services/delete/:id', (req, res, next) => {
 	Service.findByIdAndDelete(id)
 		.then(() => res.redirect('/services'))
 		.catch((err) => next(err))
+})
+
+router.get('/servicesearch/:name', (req, res, next) => {
+	const { name } = req.params
+	Service.find({ category: name })
+		.then((services) => {
+			res.render('services/list', services)
+		})
+		.catch((err) => {
+			next(err)
+		})
 })
 
 module.exports = router
