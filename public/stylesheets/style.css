@@ -358,7 +358,7 @@ ul li {
 }
 .inputsearch {
 	width: 150px;
-	margin-left: -25px;
+	margin-left: -5px;
 	height: 34px;
 	border-radius: 5px;
 }
@@ -371,6 +371,7 @@ container > div > p {
 container {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 }
 container > div {
 	margin: 10px;
