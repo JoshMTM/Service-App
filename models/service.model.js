@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose')
-const User = require('../user.model')
+require('./user.model')
 
 const ServiceSchema = new Schema({
 	name: {
