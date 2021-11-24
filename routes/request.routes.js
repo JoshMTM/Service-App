@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const Service = require('../models/Service.model')
+const Service = require('../models/service.model')
 const Request = require('../models/request.model')
 
 // view routes:
