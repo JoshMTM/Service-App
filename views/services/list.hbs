@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="detailsPage">
 	<h1>Provided services</h1>
 	<table class="table service-list">
@@ -30,3 +31,35 @@
 	</table>
 
 </div>
+=======
+<h1>Provided services</h1>
+<table class="table service-list">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Service Provider</th>
+			<th>Description</th>
+			<th>Address</th>
+			<th>Time</th>
+			<th>Price</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each services as |service|}}
+			<tr>
+				<td>{{service.name}}</td>
+				<td>{{service.serviceProvider.firstName}}
+					{{service.serviceProvider.lastName}}</td>
+				<td>{{service.description}}</td>
+				<td>{{service.address}}</td>
+				<td>{{service.time}}</td>
+				<td>{{service.price}}</td>
+				<td>
+					<a href="/services/{{service.id}}">Detail</a>
+				</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+>>>>>>> e4721b79a7224cec38e8c44741f7f0cf7af6fc0f

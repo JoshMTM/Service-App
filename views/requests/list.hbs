@@ -1,0 +1,23 @@
+<h1>Requested requests</h1>
+<table class="table request-list">
+	<thead>
+		<tr>
+			<th>Service</th>
+			<th>Requester</th>
+			<th>Date</th>
+			<th>Message</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each requests as |request|}}
+			<tr>
+				<td>{{request.service.name}}</td>
+				<td>{{request.requester.lastName}}</td>
+				<td>{{request.date}}</td>
+				<td>{{request.message}}</td>
+				<td><a href="/requests/{{request.id}}">Detail</a></td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>

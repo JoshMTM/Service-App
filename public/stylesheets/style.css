@@ -375,4 +375,12 @@ container {
 }
 container > div {
 	margin: 10px;
+/*class for the rating stars*/
+.checked {
+	color: orange;
+}
+/*class for the 'About us' Page */
+.stark-family {
+	display: flex;
+	justify-content: row;
 }

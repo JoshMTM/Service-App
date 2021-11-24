@@ -10,7 +10,6 @@ const ServiceSchema = new Schema({
 	serviceProvider: {
 		type: Schema.Types.ObjectId,
 		ref: 'User',
-		//here
 	},
 	description: {
 		type: String,
