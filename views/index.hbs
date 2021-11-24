@@ -25,8 +25,9 @@
   {{#each services}}
   <div>
   <img src="{{this.serviceImage}}"/>
-  {{this.name}}
-  <button>View details</button>
+  <br></br>
+  <p>{{this.name}}
+  <button><a href="services/{{this._id}}">View details</a></button></p>
   </div>
   {{/each}}
 </container>

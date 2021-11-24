@@ -362,3 +362,16 @@ ul li {
 	height: 34px;
 	border-radius: 5px;
 }
+container > div > img {
+	width: 250px;
+}
+container > div > p {
+	color: white;
+}
+container {
+	display: flex;
+	flex-direction: row;
+}
+container > div {
+	margin: 10px;
+}
