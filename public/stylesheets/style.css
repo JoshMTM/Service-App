@@ -32,6 +32,23 @@ nav > a > img {
 	position: relative;
 	margin-right: 5px;
 }
+
+.navHeader {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.navHeader > ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	color: #43a3e6;
+	font-size: 1.5em;
+}
+.navHeader > ul > li > a {
+	color: white;
+}
+
 h1 {
 	text-align: center;
 	margin: 70px;
@@ -117,7 +134,7 @@ ul {
 ul li {
 	line-height: 20px;
 }
-
+/*
 #to-right {
 	padding: 1em;
 	float: right;
@@ -127,6 +144,7 @@ ul li {
 	color: #43a3e6;
 	font-size: 1.5em;
 }
+*/
 
 #form h2 {
 	display: flex;
@@ -363,8 +381,9 @@ ul li {
 	border-radius: 5px;
 }
 container > div > img {
-	width: 250px;
+	width: 200px;
 	height: 180px;
+	border-radius: 10px;
 }
 container > div > p {
 	color: white;

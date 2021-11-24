@@ -17,6 +17,9 @@
 			</div>
 		</div>
 		<div class='profile-btn'>
+			<form action="/requests" method='GET'>
+				<button type='submit' class='btn btn-warning'>Your Requests</button>
+			</form>
 			<form action='/{{user._id}}/edit' method='GET'>
 				<button type='submit' class='btn btn-warning'>Edit Profile</button>
 			</form>

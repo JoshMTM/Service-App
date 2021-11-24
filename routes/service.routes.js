@@ -105,7 +105,6 @@ router.post(
 	(req, res, next) => {
 		const id = req.params.id
 		const service = req.body
-		console.log(service)
 		Service.findByIdAndUpdate(id, service)
 			.then(() => res.redirect('/services/' + id))
 			.catch((err) => next(err))
