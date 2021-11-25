@@ -42,56 +42,59 @@
 		<nav>
 			<a href="/"><img src="./images/logo1.png" alt="logo" /></a>
 			<div class="navHeader">
-				<form action="/servicesearch/:{{output}}">
-
-					<select name="category" id="category">
-						<option value="lessons">Lessons</option>
-						<option value="cleaning">Cleaning</option>
-						<option value="construction">Construction</option>
-						<option value="electronics">Electronics</option>
-						<option value="plumbing">Plumbing</option>
-						<option value="electrical">Electrical</option>
-						<option value="moving">moving</option>
-						<option value="painting">Painting</option>
-						<option value="massage">Body Massage</option>
-						<option value="mechanical">Mechanical</option>
-
-					</select>
-					<button
-						onclick="getOption()"
-						class="btn-success"
-						type="submit"
-					>Search</button>
-					<script>
-						function getOption() { selectElement =
-						document.querySelector('#category'); output =
-						selectElement.value; }
-					</script>
-				</form>
-				<ul>
-					<div id="to-left">
-					</div>
-					<li id="to-right">
-						<a href="/services">View Services</a>
-						<span> | </span>
-					</li>
-
-					{{#if isLoggedIn}}
-						<li id="to-right">
-							<a href="/logout">Logout</a>
+				<div>
+					<form
+						class="formHeader"
+						action="/servicesearch/:{{output}}"
+					>
+						<select name="category" id="category">
+							<option value="lessons">Lessons</option>
+							<option value="cleaning">Cleaning</option>
+							<option value="construction">Construction</option>
+							<option value="electronics">Electronics</option>
+							<option value="plumbing">Plumbing</option>
+							<option value="electrical">Electrical</option>
+							<option value="moving">moving</option>
+							<option value="painting">Painting</option>
+							<option value="massage">Body Massage</option>
+							<option value="mechanical">Mechanical</option>
+						</select>
+						<button
+							onclick="getOption()"
+							class="btn-success"
+							type="submit"
+						>Search</button>
+						<script>
+							function getOption() { selectElement =
+							document.querySelector('#category'); output =
+							selectElement.value; }
+						</script>
+					</form>
+				</div>
+				<div class="listHeader">
+					<ul>
+						<li>
+							<a href="/services">View Services</a>
 							<span> | </span>
 						</li>
-					{{else}}
-						<li id="to-right">
-							<a href="/signin">SignIn</a>
-							<span> | </span>
-						</li>
-						<li id="to-right">
-							<a href="/signup">Signup</a>
-							<span> | </span>
-						</li>
-					{{/if}}
-				</ul>
+
+						{{#if isLoggedIn}}
+							<li>
+								<a href="/logout">Logout</a>
+								<span> | </span>
+							</li>
+						{{else}}
+							<li>
+								<a href="/signin">SignIn</a>
+								<span> | </span>
+							</li>
+							<li>
+								<a href="/signup">Signup</a>
+								<span> | </span>
+							</li>
+						{{/if}}
+					</ul>
+				</div>
 			</div>
 		</nav>
 

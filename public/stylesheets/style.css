@@ -1,7 +1,11 @@
 body {
 	padding: 20px;
 	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
-	background-image: url(../images/bgbody.jpeg);
+	background-image: url(../images/imgbg.jpeg);
+	margin: 0 auto;
+	width: 90%;
+	padding-top: 30px;
+	min-height: 200px;
 }
 
 nav {
@@ -16,10 +20,9 @@ nav {
 		rgba(121, 150, 134, 0.699),
 		rgba(105, 94, 90, 0.7)
 	);
-	padding: 10px;
 	margin-bottom: 10px;
 	border-radius: 5px;
-	height: 14%;
+	height: 16%;
 }
 nav > ul > li > a {
 	font-size: 18px;
@@ -37,16 +40,28 @@ nav > a > img {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
 }
-.navHeader > ul {
+.navHeader > div > ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	color: #43a3e6;
 	font-size: 1.5em;
 }
-.navHeader > ul > li > a {
+.navHeader > div > ul > li > a {
 	color: white;
+	text-decoration: none;
+}
+.formHeader {
+	margin: 0 auto !important;
+	width: 400px !important;
+}
+.btn-success {
+	width: 90px !important;
+	margin: 5px;
 }
 
 h1 {
@@ -68,12 +83,12 @@ tr {
 	font-size: 1.3rem;
 }
 
-form {
+form:not(.formHeader) {
 	margin: 30px auto;
 	width: 380px;
 }
 
-label {
+label:not(.formHeader) {
 	font-size: large;
 }
 
@@ -86,7 +101,7 @@ form label {
 }
 
 form input,
-form button {
+form button:not(.formHeader) {
 	box-sizing: border-box;
 	font-size: 14px;
 	outline: 0;
@@ -95,7 +110,7 @@ form button {
 	margin-bottom: 20px;
 }
 
-form button {
+form button:not(.formHeader) {
 	background: #43a3e6;
 	border: 1px solid #43a3e6;
 	border-radius: 4px;
@@ -134,33 +149,10 @@ ul {
 ul li {
 	line-height: 20px;
 }
-/*
-#to-right {
-	padding: 1em;
-	float: right;
-}
-
-#to-right span {
-	color: #43a3e6;
-	font-size: 1.5em;
-}
-*/
 
 #form h2 {
 	display: flex;
 	justify-content: center;
-}
-
-#to-left {
-	float: left;
-	align-items: left;
-	width: 0%;
-}
-
-#to-left p a {
-	color: #000;
-	font-weight: bold;
-	font-size: 2em;
 }
 
 /* Home Page */
@@ -396,6 +388,19 @@ container {
 }
 container > div {
 	margin: 10px;
+	align-content: center;
+}
+
+container > div > p {
+	color: black;
+}
+container > div > p > button {
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: 5px;
+}
+
+container > div > p > a {
+	text-decoration: none;
 }
 /*class for the rating stars*/
 .checked {
@@ -452,4 +457,27 @@ container > div {
 
 .rating label {
 	font-size: 30px;
+}
+
+/*Home Page styles*/
+#description {
+	color: rgb(12, 12, 59);
+	text-align: justify;
+}
+.navHeader form {
+	width: 800px;
+}
+/*Adding some styles to the user profile*/
+.body-profile img {
+	width: 250px;
+	height: 250px;
+}
+/*Changing some info on the suer profile*/
+.userProfile h1,
+h2,
+h3,
+h4,
+h5 {
+	text-align: center;
+	margin: 50px;
 }
