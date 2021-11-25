@@ -1,0 +1,27 @@
+<form class="search" action="/servicesearch/:{{output}}">
+	<div class="form-group">
+		<select name="category" id="category" class="form-select">
+			<option value="lessons">Lessons</option>
+			<option value="cleaning">Cleaning</option>
+			<option value="construction">Construction</option>
+			<option value="electronics">Electronics</option>
+			<option value="plumbing">Plumbing</option>
+			<option value="electrical">Electrical</option>
+			<option value="moving">moving</option>
+			<option value="painting">Painting</option>
+			<option value="massage">Body Massage</option>
+			<option value="mechanical">Mechanical</option>
+		</select>
+	</div>
+
+	<button
+		onclick="getOption()"
+		class="btn btn-success"
+		type="submit"
+	>Search</button>
+
+	<script>
+		function getOption() { selectElement =
+		document.querySelector('#category'); output = selectElement.value; }
+	</script>
+</form>

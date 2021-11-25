@@ -33,48 +33,26 @@ router.get('/requests/new/:idService', async (req, res, next) => {
 
 // read request edit form
 
-/*router.post('/send-email', (req, res, next) => {
-	let { email, subject, message } = req.body
-// create reusable transporter object using the default SMTP transport
-	let transporter = nodemailer.createTransport({
-		service: 'gmail',
-		auth: {
-			user: 'your email address',
-			pass: 'your email password',
-		},
-		tls: {
-			rejectUnauthorized: false
-		}
-	})
-	// send email with defined transport object
-	transporter
-		.sendMail({
-			from: {{requester.email}},
-			to: {{service.serviceProvider.email}},
-			subject: 'Request for' {{service.name}},
-			text: {{message}},
-			html: `<b>${message}</b>`,
-		})
-		.then((info) =>
-			res.render('message', { email, subject, message, info }),
-		)
-		.catch((error) => console.log(error))
-})*/
-
 // database routes:
 
 // create requests
-router.post('/api/requests', async (req, res, send) => {
+router.post('/api/requests', async (req, res, next) => {
 	const requesterMail = req.session.myProperty.email
 	const request = req.body
+	const serviceId = req.body.service
+	console.log(serviceId)
 	await Request.create(request).catch((err) => next(err))
+	const service = await Service.findById(serviceId)
+		.populate('serviceProvider')
+		.catch((err) => next(err))
 
 	const options = [
-		request.service.name,
+		service.name,
 		request.message,
 		requesterMail,
-		request.email,
+		service.serviceProvider.email,
 	]
+	console.log(options)
 	await sendMail(...options)
 	res.redirect('/requests')
 })

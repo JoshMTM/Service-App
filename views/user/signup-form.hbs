@@ -1,31 +1,89 @@
-<form action="/signup/profile" method="POST" enctype="multipart/form-data">
-	<label>First name</label>
-	<input name="firstName" type="text" placeholder="Enter your First name" />
+<form
+	class="form text-center"
+	action="/signup/profile"
+	method="POST"
+	enctype="multipart/form-data"
+>
+	<div class="form-group">
+		<label for="firstName">First name:</label>
+		<input
+			id="firstName"
+			class="form-control"
+			name="firstName"
+			type="text"
+			placeholder="Enter your First name"
+		/>
+	</div>
 
-	<label>Last name</label>
-	<input name="lastName" type="text" placeholder="Enter your Last name" />
+	<div class="form-group">
+		<label for="lastName">Last name:</label>
+		<input
+			id="lastName"
+			class="form-control"
+			name="lastName"
+			type="text"
+			placeholder="Enter your Last name"
+		/>
+	</div>
 
-	<label>Expertise</label>
-	<input name="expertise" type="text" placeholder="What do for a living" />
+	<div class="form-group">
+		<label for="expertise">Expertise:</label>
+		<input
+			id="expertise"
+			class="form-control"
+			name="expertise"
+			type="text"
+			placeholder="What do for a living"
+		/>
+	</div>
 
-	<label>Email</label>
-	<input name="email" type="email" placeholder="Enter your Email address" />
+	<div class="form-group">
+		<label for="email">Email:</label>
+		<input
+			id="email"
+			class="form-control"
+			name="email"
+			type="email"
+			placeholder="Enter your Email address"
+		/>
+	</div>
 
-	<label>Password</label>
-	<input name="password" type="password" placeholder="Enter your Password" />
+	<div class="form-group">
+		<label for="password">Password:</label>
+		<input
+			id="password"
+			class="form-control"
+			name="password"
+			type="password"
+			placeholder="Enter your Password"
+		/>
+	</div>
 
-	<label>Your Profile picture</label>
-	<input name="img_url" type="file" accept="image/png image/jpg image/jpeg" />
+	<div class="form-group">
+		<label for="img_url">Your Profile picture:</label>
+		<input
+			id="img_url"
+			class="form-control"
+			name="img_url"
+			type="file"
+			accept="image/png image/jpg image/jpeg"
+		/>
+	</div>
 
-	<label>Description</label>
-
-	<textarea rows="5" cols="45" name="description">
-		"Tell us briefly about who you are and what you do"
-	</textarea>
+	<div class="form-group">
+		<label for="description">Description:</label>
+		<textarea
+			id="description"
+			class="form-control"
+			rows="5"
+			cols="45"
+			name="description"
+			placeholder="Tell us briefly about who you are and what you do"
+		></textarea>
+	</div>
 	<br />
 	<br />
-	<button>Sign Up</button>
-
+	<button class="btn btn-primary">Sign Up</button>
 </form>
 
 {{#if error}}

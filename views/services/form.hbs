@@ -1,6 +1,11 @@
 <h2>Add or edit a service</h2>
 
-<form method="post" action="/services/new" enctype="multipart/form-data">
+<form
+	class="form text-center"
+	method="post"
+	action="/services/new"
+	enctype="multipart/form-data"
+>
 	<div class="form-group">
 		<label for="name">Name:</label>
 		<input
@@ -12,8 +17,8 @@
 		/>
 	</div>
 	<div class="form-group">
-		<label for="name">Category</label>
-		<select name="category" id="category">
+		<label for="name">Category:</label>
+		<select name="category" id="category" class="form-select">
 			<option value="lessons">Lessons</option>
 			<option value="cleaning">Cleaning</option>
 			<option value="construction">Construction</option>
@@ -24,9 +29,9 @@
 			<option value="painting">Painting</option>
 			<option value="massage">Body Massage</option>
 			<option value="mechanical">Mechanical</option>
-
 		</select>
 	</div>
+	<br />
 	<div class="form-group">
 		<label for="description">Description:</label>
 		<input
@@ -70,6 +75,7 @@
 	<div class="form-group">
 		<label for="image">Images:</label>
 		<input
+			class="form-control"
 			type="file"
 			name="serviceImage"
 			value="{{service.serviceImage}}"

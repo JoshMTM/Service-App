@@ -21,14 +21,8 @@ router.get('/services', (req, res, next) => {
 })
 
 // Services new form (read)
-router.get('/:id/services/new', (req, res, next) => {
-	const { id } = req.params
-	Service.find()
-		.then((services) => {
-			//console.log(services)
-			res.render('services/form', { services })
-		})
-		.catch((err) => next(err))
+router.get('/services/new', (req, res, next) => {
+	res.render('services/form')
 })
 
 // Services read detail (read)

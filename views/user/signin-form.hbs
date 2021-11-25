@@ -1,16 +1,31 @@
-<form method="POST" action="/profile">
-	<label>Email</label>
-	<input type="email" name="email" placeholder="Enter your username" />
+<form class="form text-center" method="POST" action="/profile">
+	<div class="form-group">
+		<label for="email">Email:</label>
+		<input
+			id="email"
+			class="form-control"
+			type="email"
+			name="email"
+			placeholder="Enter your username"
+		/>
+	</div>
 
-	<label>Password</label>
-	<input type="password" name="password" placeholder="Enter your Password" />
-	<button>Sign In</button>
-</form>
+	<div class="form-group">
+		<label for="password">Password:</label>
+		<input
+			id="password"
+			class="form-control"
+			type="password"
+			name="password"
+			placeholder="Enter your Password"
+		/>
+	</div>
+	<button type="submit" class="btn btn-primary">Sign In</button>
 
-<form method="GET" action="/auth/google">
+	<hr />
 
-	<label>Login with Gmail account</label>
-	<button>LoggIn</button>
+	<label>Login with Gmail account:</label>
+	<button type="button" class="btn btn-primary">Log In</button>
 </form>
 
 {{#if error}}
