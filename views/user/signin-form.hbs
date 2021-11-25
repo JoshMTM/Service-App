@@ -1,12 +1,18 @@
 <form method="POST" action="/profile">
-  <label>Email</label>
-  <input type="email" name="email" placeholder="Enter your username" />
+	<label>Email</label>
+	<input type="email" name="email" placeholder="Enter your username" />
 
-  <label>Password</label>
-  <input type="password" name="password" placeholder="Enter your Password" />
-  <button>Sign In</button>
+	<label>Password</label>
+	<input type="password" name="password" placeholder="Enter your Password" />
+	<button>Sign In</button>
+</form>
+
+<form method="POST" action="/auth/google">
+
+	<label>Login with Gmail account</label>
+	<button>LoggIn</button>
 </form>
 
 {{#if error}}
-  <p>Error message: {{error}}</p>
+	<p>Error message: {{error}}</p>
 {{/if}}

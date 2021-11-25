@@ -20,6 +20,7 @@ const userSchema = new Schema({
 			ref: 'Request',
 		},
 	],
+	googleID: String,
 })
 
 const User = model('User', userSchema)
