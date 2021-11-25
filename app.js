@@ -24,7 +24,7 @@ const projectName = 'handeeApp'
 const capitalized = (string) =>
 	string[0].toUpperCase() + string.slice(1).toLowerCase()
 
-app.locals.title = `${capitalized(projectName)} created with IronLauncher`
+app.locals.title = `${capitalized(projectName)} created with Josh and Yulia`
 
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
@@ -45,6 +45,11 @@ app.use(
 		}),
 	}),
 )
+
+app.use((req, res, next) => {
+	req.app.locals.isLoggedIn = !!req.session.myProperty
+	next()
+})
 
 //Passport session
 
