@@ -20,7 +20,7 @@ router.get('/services', (req, res, next) => {
 
 // Services new form (read)
 router.get('/services/new', (req, res, next) => {
-	res.render('services/form', { services })
+	res.render('services/form')
 })
 
 // Services read detail (read)

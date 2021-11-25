@@ -22,11 +22,12 @@ router.get('/requests/new/:idService', async (req, res, next) => {
 		.catch((err) => next(err))
 
 	const { id, name } = service
-	const { email } = service.serviceProvider
+	const { firstName, lastName } = service.serviceProvider
 	res.render('requests/form', {
 		service: { id, name },
 		user: { id: req.session.myProperty._id },
-		email,
+		firstName,
+		lastName,
 	})
 })
 
