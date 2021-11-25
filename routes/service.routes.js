@@ -70,7 +70,7 @@ router.get('/services/images/:filename', (req, res, next) => {
 
 // Service Create
 router.post(
-	'/api/services',
+	'/services/new',
 	uploader.single('serviceImage'),
 	(req, res, next) => {
 		const {
