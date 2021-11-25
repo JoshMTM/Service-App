@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const Service = require('../models/service.model')
 const Request = require('../models/request.model')
+const { sendMail } = require('../services/mail.service')
 
 // view routes:
 
@@ -14,28 +15,67 @@ router.get('/requests', (req, res, next) => {
 })
 
 // read request new form
-router.get('/requests/new/:idService', (req, res, next) => {
+router.get('/requests/new/:idService', async (req, res, next) => {
 	const { idService } = req.params
-	Service.findById(idService)
-		.then((service) => {
-			const { id, name } = service
-			res.render('requests/form', {
-				service: { id, name },
-				user: { id: req.session.myProperty._id },
-			})
-		})
+	const service = await Service.findById(idService)
+		.populate('serviceProvider')
 		.catch((err) => next(err))
+
+	const { id, name } = service
+	const { email } = service.serviceProvider
+	res.render('requests/form', {
+		service: { id, name },
+		user: { id: req.session.myProperty._id },
+		email,
+	})
 })
+
 // read request edit form
+
+/*router.post('/send-email', (req, res, next) => {
+	let { email, subject, message } = req.body
+// create reusable transporter object using the default SMTP transport
+	let transporter = nodemailer.createTransport({
+		service: 'gmail',
+		auth: {
+			user: 'your email address',
+			pass: 'your email password',
+		},
+		tls: {
+			rejectUnauthorized: false
+		}
+	})
+	// send email with defined transport object
+	transporter
+		.sendMail({
+			from: {{requester.email}},
+			to: {{service.serviceProvider.email}},
+			subject: 'Request for' {{service.name}},
+			text: {{message}},
+			html: `<b>${message}</b>`,
+		})
+		.then((info) =>
+			res.render('message', { email, subject, message, info }),
+		)
+		.catch((error) => console.log(error))
+})*/
 
 // database routes:
 
 // create requests
-router.post('/api/requests', (req, res, send) => {
+router.post('/api/requests', async (req, res, send) => {
+	const requesterMail = req.session.myProperty.email
 	const request = req.body
-	Request.create(request)
-		.then(() => res.redirect('/requests'))
-		.catch((err) => next(err))
+	await Request.create(request).catch((err) => next(err))
+
+	const options = [
+		request.service.name,
+		request.message,
+		requesterMail,
+		request.email,
+	]
+	await sendMail(...options)
+	res.redirect('/requests')
 })
 
 // update requests
@@ -48,13 +88,12 @@ router.post('/api/requests/:id', (req, res, next) => {
 })
 
 // delete requests
-router.get('/requests/delete/id', (req, res, send) => {
+router.get('/api/requests/delete/id', async (req, res, next) => {
 	const { id } = req.params
-	Request.findByIdAndDelete(id)
-		.then(() => {
-			res.redirect('/requests')
-		})
-		.catch((err) => next(err))
+	await Request.findByIdAndDelete(id).catch((err) => next(err))
+	res.redirect('/requests')
 })
+
+// email routes:
 
 module.exports = router

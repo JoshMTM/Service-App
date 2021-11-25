@@ -15,6 +15,7 @@ const ServiceSchema = new Schema({
 		type: String,
 		required: true,
 		enum: [
+			'lessons',
 			'cleaning',
 			'construction',
 			'electronics',

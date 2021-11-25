@@ -5,7 +5,7 @@ const Service = require('../models/service.model')
 router.get('/', (req, res, next) => {
 	Service.find()
 		.then((services) => {
-			const sortdServices = services.sort((a, b) => a - b)
+			const sortdServices = services.sort((a, b) => b - a)
 			sortdServices.length = Math.min(services.length, 3)
 			// services.splice(services.length - 3)
 			res.render('index', { sortdServices })
