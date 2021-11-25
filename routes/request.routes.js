@@ -25,7 +25,7 @@ router.get('/requests/new/:idService', async (req, res, next) => {
 	const { firstName, lastName } = service.serviceProvider
 	res.render('requests/form', {
 		service: { id, name },
-		user: { id: req.session.myProperty._id },
+		user: { id: req.session?.myProperty._id },
 		firstName,
 		lastName,
 	})
