@@ -3,8 +3,11 @@ const User = require('../models/user.model')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const uploader = require('./cloudinary.config')
+const passport = require('passport')
 
-router.get('/', (req, res, next) => {})
+router.get('/profile', (req, res, next) => {
+	res.render('user/user-profile', { user })
+})
 
 router.get('/signin', (req, res, next) => {
 	res.render('user/signin-form.hbs')
@@ -145,5 +148,22 @@ router.post('/:id/profile', (req, res, next) => {
 			next('Failed to update your profile', err)
 		})
 })
+
+router.get(
+	'/auth/google',
+	passport.authenticate('google', {
+		scope: [
+			'https://www.googleapis.com/auth/userinfo.profile',
+			'https://www.googleapis.com/auth/userinfo.email',
+		],
+	}),
+)
+router.get(
+	'/auth/google/callback',
+	passport.authenticate('google', {
+		successRedirect: '/services',
+		failureRedirect: '/', // here you would redirect to the login page using traditional login approach
+	}),
+)
 
 module.exports = router

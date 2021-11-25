@@ -6,10 +6,10 @@
 	<input type="hidden" name="requester" value="{{user.id}}" />
 
 	<div class="form-group">
-		<label for="email">Service provider mail:</label>
+		<label for="email">Requested by:</label>
 		<input
 			name="email"
-			value="{{email}}"
+			value="{{firstName}} {{lastName}}"
 			type="email"
 			class="form-control"
 			id="email"
