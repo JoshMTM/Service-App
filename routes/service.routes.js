@@ -119,6 +119,7 @@ router.get('/api/services/delete/:id', (req, res, next) => {
 		.catch((err) => next(err))
 })
 
+//Search by category
 router.get('/servicesearch/:name', (req, res, next) => {
 	const { name } = req.params
 	Service.find({ category: name })

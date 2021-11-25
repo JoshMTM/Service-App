@@ -58,7 +58,7 @@ app.use(passport.session())
 passport.serializeUser((user, cb) => cb(null, user._id))
 
 passport.deserializeUser((id, cb) => {
-	UserModel.findById(id)
+	User.findById(id)
 		.then((user) => cb(null, user))
 		.catch((err) => cb(err))
 })
@@ -81,7 +81,11 @@ passport.use(
 						return
 					}
 
-					User.create({ googleID: profile.id })
+					User.create({
+						googleID: profile.id,
+						firstName: profile.name.givenName,
+						img_url: profile.photos[0].value,
+					})
 						.then((newUser) => {
 							done(null, newUser)
 						})

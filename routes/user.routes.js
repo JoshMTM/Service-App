@@ -6,7 +6,11 @@ const uploader = require('./cloudinary.config')
 const passport = require('passport')
 
 router.get('/profile', (req, res, next) => {
-	res.render('user/user-profile', { user })
+	if (req.session.passport) {
+		req.session.myProperty = { _id: req.session.passport.user }
+	}
+	console.log(req.session)
+	res.render('user/user-profile')
 })
 
 router.get('/signin', (req, res, next) => {
@@ -149,6 +153,7 @@ router.post('/:id/profile', (req, res, next) => {
 		})
 })
 
+//Google auth
 router.get(
 	'/auth/google',
 	passport.authenticate('google', {
@@ -161,7 +166,7 @@ router.get(
 router.get(
 	'/auth/google/callback',
 	passport.authenticate('google', {
-		successRedirect: '/services',
+		successRedirect: '/profile',
 		failureRedirect: '/', // here you would redirect to the login page using traditional login approach
 	}),
 )
