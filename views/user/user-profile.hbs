@@ -1,5 +1,5 @@
-<div class="userProfile">
-	<p>Welcome to your space <b>{{user.firstName}}</b></p>
+<div class="4,">
+	<h2>Welcome to your space <b>{{user.firstName}}</b></h2>
 	<h3>Get the best quality home <a href="/services">services</a> near you</h3>
 	<p>On this page, feel free to add services that you are able to offer, if
 		any. Otherwise you can make a request to any needed service and you will
@@ -19,15 +19,15 @@
 		</div>
 	</div>
 	<div class="profile-btn">
-		<form action="/requests" method="GET">
-			<button type="submit" class="btn btn-warning">Your Requests</button>
+		<form action="/requests" method="GET" class="form-group">
+			<button type="submit" class="btn btn-primary">Your Requests</button>
 		</form>
 		<form action="/{{user._id}}/edit" method="GET">
-			<button type="submit" class="btn btn-warning">Edit Profile</button>
+			<button type="submit" class="btn btn-primary">Edit Profile</button>
 		</form>
 
 		<form action="/{{user._id}}/services/new" method="GET">
-			<button type="submit" class="btn btn-warning">Add Service</button>
+			<button type="submit" class="btn btn-primary">Add Service</button>
 		</form>
 	</div>
 </div>

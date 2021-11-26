@@ -15,4 +15,9 @@ router.get('/', (req, res, next) => {
 		})
 })
 
+router.get('/pages/:pageName', (req, res) => {
+	const pageName = req.params.pageName
+	res.render(`pages/${pageName}`)
+})
+
 module.exports = router

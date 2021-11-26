@@ -1,82 +1,83 @@
 <div class="detailsPage">
-<h2>Service Details</h2>
+	<h2>Service Details</h2>
+	<br />
+	<br />
+	{{#if service}}
 
-{{#if service}}
+		<div class="row">
+			<div class="col">
+				<h4>{{service.name}}:</h4>
+				<img src="{{service.serviceImage}}" alt="serviceImage" />
+			</div>
 
-	<div class="row">
-		<div class="col">
-			<h4>{{service.name}}:</h4>
-			<img src="{{service.serviceImage}}" alt="serviceImage"/>
-		</div>
-
-		<div class="col offset-1">
-			<h5>Service Provider:</h5>
-			<div class="field">{{firstName}} {{lastName}}</div>
-			<h5>Description:</h5>
-			<div class="field">{{service.description}}</div>
-			<h5>Address:</h5>
-			<div class="field">{{service.address}}</div>
-			<h5>Time:</h5>
-			<div class="field">{{service.time}}</div>
-			<h5>Price:</h5>
-			<div class="field">{{service.price}}</div>
-			<div class="col offset-3">
-				{{#if isServiceProvider}}
-					<a
-						href="/services/edit/{{service.id}}"
-						class="btn btn-primary"
-					>Edit this service</a>
-					<a
-						class="btn btn-danger"
-						href="/api/services/delete/{{service.id}}"
-					>Delete</a>
-				{{else}}
-					<h5>Service rating </h5>
-					<div class="rating">
-						<input
-							class="star"
-							type="radio"
-							name="rating"
-							value="5"
-							id="5"
-						/><label for="5">☆</label>
-						<input
-							class="star"
-							type="radio"
-							name="rating"
-							value="4"
-							id="4"
-						/><label for="4">☆</label>
-						<input
-							class="star"
-							type="radio"
-							name="rating"
-							value="3"
-							id="3"
-						/><label for="3">☆</label>
-						<input
-							class="star"
-							type="radio"
-							name="rating"
-							value="2"
-							id="2"
-						/><label for="2">☆</label>
-						<input
-							class="star"
-							type="radio"
-							name="rating"
-							value="1"
-							id="1"
-						/><label for="1">☆</label>
-					</div>
-					<a
-						href="/requests/new/{{service.id}}"
-						class="btn btn-primary"
-					>Request this service</a>
-				{{/if}}
+			<div class="col offset-1">
+				<h5>Service Provider:</h5>
+				<div class="field">{{firstName}} {{lastName}}</div>
+				<h5>Description:</h5>
+				<div class="field">{{service.description}}</div>
+				<h5>Address:</h5>
+				<div class="field">{{service.address}}</div>
+				<h5>Time:</h5>
+				<div class="field">{{service.time}}</div>
+				<h5>Price:</h5>
+				<div class="field">{{service.price}}</div>
+				<div class="col offset-3">
+					{{#if isServiceProvider}}
+						<a
+							href="/services/edit/{{service.id}}"
+							class="btn btn-primary"
+						>Edit this service</a>
+						<a
+							class="btn btn-danger"
+							href="/api/services/delete/{{service.id}}"
+						>Delete</a>
+					{{else}}
+						<h5>Service rating </h5>
+						<div class="rating">
+							<input
+								class="star"
+								type="radio"
+								name="rating"
+								value="5"
+								id="5"
+							/><label for="5">☆</label>
+							<input
+								class="star"
+								type="radio"
+								name="rating"
+								value="4"
+								id="4"
+							/><label for="4">☆</label>
+							<input
+								class="star"
+								type="radio"
+								name="rating"
+								value="3"
+								id="3"
+							/><label for="3">☆</label>
+							<input
+								class="star"
+								type="radio"
+								name="rating"
+								value="2"
+								id="2"
+							/><label for="2">☆</label>
+							<input
+								class="star"
+								type="radio"
+								name="rating"
+								value="1"
+								id="1"
+							/><label for="1">☆</label>
+						</div>
+						<a
+							href="/requests/new/{{service.id}}"
+							class="btn btn-primary"
+						>Request this service</a>
+					{{/if}}
+				</div>
 			</div>
 		</div>
-	</div>
 
-{{/if}}
+	{{/if}}
 </div>

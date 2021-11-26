@@ -27,6 +27,7 @@ footer ul li {
 
 main {
 	padding: 50px 0;
+	min-height: 55vh;
 }
 main * {
 	color: rgb(1, 57, 154);
@@ -41,15 +42,6 @@ nav {
 h1 {
 	text-align: center;
 	margin: 70px;
-}
-
-h2 {
-	text-align: center;
-	margin: 50px;
-}
-h4 {
-	text-align: center;
-	padding: 5px;
 }
 
 td,
@@ -204,10 +196,19 @@ form button:hover {
 /* User profile */
 
 .userProfile {
-	background-color: rgba(167, 176, 255, 0.466);
-	padding: 30px;
+	/*background-color: rgba(167, 176, 255, 0.466);*/
+	padding: 32, 0px;
+	text-align: center;
 }
-.body-profile {
+.userProfile p,
+h1,
+h2,
+h3 h4,
+h5 {
+	padding: 10px;
+	text-align: center;
+}
+.userProfile h .body-profile {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -405,9 +406,23 @@ container > div {
 /*class for the 'About us' Page */
 .stark-family {
 	display: flex;
-	justify-content: row;
+	justify-content: space-around;
+	height: 300px;
+	width: auto;
+	padding: 20px;
 }
-.col > img {
+.stark {
+	text-align: center;
+}
+.stark h2 {
+	padding: 20px 0 0 0;
+}
+
+.stark img {
+	height: 300px;
+	width: auto;
+}
+.stark h .col > img {
 	width: 450px;
 	border-radius: 10px;
 }
