@@ -80,6 +80,7 @@ h1 {
 h2 {
 	text-align: center;
 	margin: 50px;
+	font-family: 'Playfair Display', serif;
 }
 h4 {
 	text-align: center;
@@ -200,6 +201,7 @@ ul li {
 	font-style: italic;
 	color: rgba(21, 85, 1, 0.986);
 	text-align: center;
+	font-family: 'Playfair Display', serif;
 }
 
 /* User profile */
