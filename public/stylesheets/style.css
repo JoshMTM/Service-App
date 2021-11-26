@@ -3,7 +3,7 @@ body {
 	font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 	background-image: url(../images/imgbg.jpeg);
 	margin: 0 auto;
-	width: 90%;
+	width: 80%;
 	padding-top: 30px;
 	min-height: 200px;
 }
@@ -159,7 +159,7 @@ ul li {
 .HomePage {
 	padding: 5px 20px 20px 20px;
 	border-radius: 5px;
-	color: white;
+	color: black;
 }
 
 .welcomePage {
@@ -170,14 +170,17 @@ ul li {
 
 .welcomePage > div {
 	text-align: center;
+	align-items: center;
 }
 .welcomePage > div > img {
 	width: 500px;
 	border-radius: 10px;
 }
 .welcomePage > div > p {
-	width: 350px;
-	border-radius: 10px;
+	width: 480px;
+	font-style: italic;
+	line-height: 2.6em;
+	font-size: 1.2em;
 }
 .homepageTitle {
 	text-align: center;

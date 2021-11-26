@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
 		.then((services) => {
 			// const sortdServices = services.sort((a, b) => b - a)
 			// sortdServices.length = Math.min(services.length, 3)
-			const elem = services.slice(-3)
+			const elem = services.slice(-4)
 			res.render('index', { services: elem })
 		})
 		.catch((err) => {

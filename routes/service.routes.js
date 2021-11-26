@@ -39,14 +39,22 @@ router.get('/services/:id', (req, res, next) => {
 	Service.findById(id)
 		.populate('serviceProvider')
 		.then((service) => {
-			const isServiceProvider = user._id == service.serviceProvider._id
-			const { firstName, lastName } = service.serviceProvider
-			res.render('services/detail', {
-				service,
-				isServiceProvider,
-				firstName,
-				lastName,
-			})
+			if (user) {
+				const isServiceProvider =
+					user._id == service.serviceProvider._id
+				const { firstName, lastName } = service.serviceProvider
+				res.render('services/detail', {
+					service,
+					isServiceProvider,
+					firstName,
+					lastName,
+				})
+			} else {
+				res.render('user/signin-form.hbs', {
+					error: 'You need to log In or signup in order to view the details of every service and make a request',
+				})
+				return
+			}
 		})
 		.catch((err) => next(err))
 })
