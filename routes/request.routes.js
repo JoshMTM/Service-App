@@ -64,23 +64,25 @@ router.get('/requests/new/:idService', async (req, res, next) => {
 // database routes:
 
 // create requests
-router.post('/api/requests', async (req, res, send) => {
+router.post('/api/requests', async (req, res, next) => {
 	const requesterMail = req.session.myProperty.email
 	const request = req.body
-	console.log(requesterMail)
+	const serviceId = req.body.service
+	console.log(serviceId)
 	await Request.create(request).catch((err) => next(err))
-	try {
-		const options = [
-			request.service.name,
-			request.message,
-			requesterMail,
-			request.email,
-		]
-		await sendMail(...options)
-		res.redirect('/requests')
-	} catch (err) {
-		console.log(err)
-	}
+	const service = await Service.findById(serviceId)
+		.populate('serviceProvider')
+		.catch((err) => next(err))
+
+	const options = [
+		service.name,
+		request.message,
+		requesterMail,
+		service.serviceProvider.email,
+	]
+	console.log(options)
+	await sendMail(...options)
+	res.redirect('/requests')
 })
 
 // update requests

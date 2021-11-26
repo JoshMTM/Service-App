@@ -128,11 +128,11 @@ router.get('/api/services/delete/:id', (req, res, next) => {
 })
 
 //Search by category
-router.get('/servicesearch/:name', (req, res, next) => {
-	const { name } = req.params
-	Service.find({ category: name })
+router.get('/servicesearch', (req, res, next) => {
+	const { category } = req.query
+	Service.find({ category })
 		.then((services) => {
-			res.render('services/list', services)
+			res.render('services/list', { services })
 		})
 		.catch((err) => {
 			next(err)

@@ -12,7 +12,7 @@ nav {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: stretch;
 	align-content: stretch;
 	background: linear-gradient(
@@ -24,12 +24,12 @@ nav {
 	border-radius: 5px;
 	height: 16%;
 }
-nav > ul > li > a {
+nav > div > ul > li > a {
 	font-size: 18px;
 	text-decoration: none;
 	color: rgb(255, 255, 253);
 }
-nav > a > img {
+nav > div > a > img {
 	width: 150px;
 	float: left;
 	position: relative;
@@ -44,16 +44,24 @@ nav > a > img {
 	align-items: center;
 	align-content: stretch;
 }
-.navHeader > div > ul {
+nav > div > ul {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	color: #43a3e6;
 	font-size: 1.5em;
+	margin: 15px;
 }
 .navHeader > div > ul > li > a {
 	color: white;
 	text-decoration: none;
+}
+
+.listheader > ul > li > a > img {
+	width: 50px;
+	border-radius: 30px;
+	margin-left: 20px;
+	margin-top: -10px !important;
 }
 .formHeader {
 	margin: 0 auto !important;
@@ -190,7 +198,7 @@ ul li {
 .inspire {
 	font-size: 2em;
 	font-style: italic;
-	color: rgba(238, 49, 255, 0.568);
+	color: rgba(21, 85, 1, 0.986);
 	text-align: center;
 }
 

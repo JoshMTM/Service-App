@@ -48,6 +48,8 @@ app.use(
 
 app.use((req, res, next) => {
 	req.app.locals.isLoggedIn = !!req.session.myProperty
+	req.app.locals.avatar = req?.session?.myProperty?.img_url
+	req.app.locals.user = req?.session?.myProperty
 	next()
 })
 
