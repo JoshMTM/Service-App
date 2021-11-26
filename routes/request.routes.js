@@ -67,16 +67,20 @@ router.get('/requests/new/:idService', async (req, res, next) => {
 router.post('/api/requests', async (req, res, send) => {
 	const requesterMail = req.session.myProperty.email
 	const request = req.body
+	console.log(requesterMail)
 	await Request.create(request).catch((err) => next(err))
-
-	const options = [
-		request.service.name,
-		request.message,
-		requesterMail,
-		request.email,
-	]
-	await sendMail(...options)
-	res.redirect('/requests')
+	try {
+		const options = [
+			request.service.name,
+			request.message,
+			requesterMail,
+			request.email,
+		]
+		await sendMail(...options)
+		res.redirect('/requests')
+	} catch (err) {
+		console.log(err)
+	}
 })
 
 // update requests

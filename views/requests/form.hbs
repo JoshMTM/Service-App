@@ -1,16 +1,24 @@
-<h2>Create a new Request</h2>
+<h2>Make your Request</h2>
 
-<form method="post" action="/api/requests">
+<form method="POST" action="/api/requests">
 	<h4>For service: {{service.name}}</h4>
 	<input type="hidden" name="service" value="{{service.id}}" />
 	<input type="hidden" name="requester" value="{{user.id}}" />
 
 	<div class="form-group">
-		<label for="email">Requested by:</label>
+		<label for="email">Service owned by:</label>
+		<input
+			name="firstName"
+			value="{{firstName}} {{lastName}}"
+			type="text"
+			class="form-control"
+			id="email"
+			readonly
+		/>
 		<input
 			name="email"
-			value="{{firstName}} {{lastName}}"
-			type="email"
+			value="{{email}}"
+			type="hidden"
 			class="form-control"
 			id="email"
 			readonly
